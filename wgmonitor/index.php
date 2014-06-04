@@ -15,9 +15,10 @@ Config::init();
   <div class="col-md-8">
   	<?php require "menu.php";?> 
   	<!-- Table for Infoscreen --> 
-  	<table width="100%">
-    	<!--<tr id="content">-->
-    </tr></table>
+  	<div class="row" id="content"></div>	
+    <!--<table width="100%">
+    	<tr id="content">
+    </tr></table>-->
   </div>
   
    	<?php require "sidebar.php";?>

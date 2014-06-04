@@ -15,7 +15,7 @@ $showmax = ($getshow >= 1) ? $getshow : Config::$pref['showmax'];
 
 
 foreach(Config::$pref['stations'] AS $station){
-	echo "<td>";
+	echo "<div class='col-md-6'>";
 	
 
 	$sm = new StationMonitor($station);
@@ -61,6 +61,6 @@ foreach(Config::$pref['stations'] AS $station){
 	
 	echo $table;
 	
-	echo "</td>";
+	echo "</div>";
 }
 ?>
