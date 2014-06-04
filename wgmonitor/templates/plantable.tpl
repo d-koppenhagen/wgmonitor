@@ -1,8 +1,6 @@
-<table class="table table-striped" width="100%">
+<table class="table table-striped">
 
-<tr>
-	<td colspan="2">{STATIONNAME}</td>
-</tr>
+<th colspan="2" style="text-align:center">{STATIONNAME}</th>
 
 {PLANROWS}
 
