@@ -11,7 +11,7 @@ class Config{
 			"tagesschau_onlytoday" => 1, //only show today's posts from Tagesschau RSS feed
 			//"refreshplan" => rand(200,300), //Aktualisierungszeit vom Abfahrtsmonitor
 			"refreshplan" => 10000000,
-			"refreshtemp" => 300, 
+			"refreshtemp" => rand(350,600), 
 			"refreshnews" => 15, //Aktualisierungszeit der News
 		);
 	}

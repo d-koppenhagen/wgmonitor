@@ -139,12 +139,9 @@
 
   <tr>
     <th></th>
-    <th id="headline">heute<br />
-      <?php echo $datum_heute; ?></th>
-    <th id="headline">heute++<br />
-      <?php echo $datum_morgen; ?></th>
-    <th id="headline">heute+2<br />
-      <?php echo $datum_uebermorgen; ?></th>
+    <th id="headline">heute <?php echo $datum_heute; ?></th>
+    <th id="headline">heute++ <?php echo $datum_morgen; ?></th>
+    <th id="headline">heute+2 <?php echo $datum_uebermorgen; ?></th>
     </tr>
   <tr>
     <td id="headline">Morgens:</td>

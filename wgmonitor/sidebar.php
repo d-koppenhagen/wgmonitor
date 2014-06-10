@@ -7,5 +7,6 @@
 <table class="table table-striped">
     <?php require "wetter.php";?>
 </table>
-<ul id="news_content"></ul>
+<p id="news_content">...</p>
+<!--<ul id="news_content" class="list-group"></ul>-->
 </div>
