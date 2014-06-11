@@ -5,7 +5,6 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <link rel="stylesheet" href="media/style.css" type="text/css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="media/jquery.newsfade.1.0.js"></script>
 <script>
 (function($){
     $(document).ready(function(){

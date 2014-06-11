@@ -123,7 +123,7 @@ td#calendarTabs1 div.ui-rtsr-selected {
 }
 td#calendarTabs1 div.ui-rtsr-unselected {
 	background-color: {$calColorBgLight} !important;
-	color: {$calColorTextOnLight} !important;
+	color: {$calColorTextOnDark} !important;
 }
 
 /* week view */
@@ -156,11 +156,14 @@ table.mv-daynames-table {
 	background-color: {$calColorBgDark} !important;
 	/* days of the week */
 	color: {$calColorTextOnDark} !important;
+	font-size: 14px !important;
+	
 }
 td.st-bg,
 td.st-dtitle {
 	/* cell borders */
 	border-left: 1px solid {$calColorBgDark} !important;
+	background-color: {$calColorBgDark} !important;
 }
 td.st-dtitle {
 	/* days of the month */
@@ -168,6 +171,8 @@ td.st-dtitle {
 	color: {$calColorTextOnLight} !important;
 	/* cell borders */
 	border-top: 1px solid {$calColorBgDark} !important;
+	color: {$calColorTxtHeader} !important;
+	font-size: 14px;
 }
 td.st-bg-today {
 	background-color: {$calColorBgToday} !important;
@@ -191,6 +196,17 @@ div.event {
 div.day {
 	border-bottom: 1px solid {$calColorBgDark} !important;
 }
+
+.footer{
+	display: none;
+}
+
+.mv-event-container{
+	background: none;
+	border: none;
+}
+
+
 
 EOT;
 

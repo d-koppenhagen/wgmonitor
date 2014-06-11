@@ -5,6 +5,7 @@ Config::init();
 <!DOCTYPE HTML>
 <html>
 <?php require "head.php";?>
+<link href="../css/jsKeyboard.css" rel="stylesheet">
 
 <body>
 <div class="row">
@@ -15,10 +16,10 @@ Config::init();
     <form action="" method="post"  class="form-inline" role="form">
 		<div class="row">
   			<div class="col-xs-7">
-  				<input type="text" class="form-control" id="name" placeholder="Artikelname"  name="name" required autofocus="autofocus" style="width:100%;">
+  				<input type="text" class="form-control" id="name" placeholder="Artikelname"  name="name" required autofocus style="width:100%;" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" ontouchstart="jsKeyboard.focus(this);clean(this);placeholder=''" >
             </div>
   			<div class="col-xs-3">
-    			<input type="text" class="form-control" id="quantity" placeholder="Anzahl / Menge"  name="quantity" style="width:100%;">
+    			<input type="text" class="form-control" id="quantity" placeholder="Anzahl / Menge"  name="quantity" style="width:100%;" >
   			</div>
        		<div class="col-xs-2">
         		<button class="btn btn-default btn-block" type="submit">Hinzufügen</button>     
@@ -98,5 +99,54 @@ echo '</table>';
 </div>  
 	<?php require "sidebar.php";?>
 </div>
+
+
+
+<!-- for Keyboard -->
+    <!-- show keyboard  -->
+    <div id="keyboardIcon" onclick="showKeyboard('txtContent');"></div>
+
+    <!-- Script zum erkennen mobiler Endgeräte -->
+	<script type="text/javascript">    
+        // check wether to enable onscreeenkeyboard or not
+        var keyboardEnabled = localStorage.getItem("EnableOnscreenKeyboard");
+        if (keyboardEnabled == "true") {
+            document.write("<div id=\"virtualKeyboard\"></div>");
+        }
+	</script>
+    
+    <script type="text/javascript" src="../js/jsKeyboard.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            jsKeyboard.init("virtualKeyboard");
+            $("#txtContent").val(initText);
+        });
+
+        function focusIt(t) {
+            // define where the cursor is to write character clicked.
+            jsKeyboard.currentElement = $(t);
+            jsKeyboard.show();
+        }
+
+        function showKeyboard(id) {
+            clean($("#" + id));
+            jsKeyboard.currentElement = $("#" + id);
+            jsKeyboard.show();
+        }
+        var isCleaned = false;
+        function clean(t) {
+            if (!isCleaned) {
+                $(t).text("");
+                isCleaned = true;
+            }
+        }
+        var initText = "click to here to start writing...";
+	</script>
+
+
+
+
+
 </body>
 </html>
