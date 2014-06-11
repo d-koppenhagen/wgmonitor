@@ -4,6 +4,9 @@
 <title>Infoscreen</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <link rel="stylesheet" href="media/style.css" type="text/css">
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="media/bootstrap-image-gallery.min.css">
+
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 (function($){
