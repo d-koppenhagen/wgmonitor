@@ -15,7 +15,7 @@ Config::init();
   <div class="col-md-8">
   	<?php require "menu.php";?>
 <span class="help-block">    
-<iframe src="gcalendar-wrapper.php?showTitle=0&showPrint=0&showCalendars=0&height=800&wkst=2&src=danny.koppenhagen%40t-online.de&color=%232952A3&src=de.german%23holiday%40group.v.calendar.google.com&color=%23AB8B00&amp;src=e_2_de%23weeknum%40group.v.calendar.google.com&color=%23865A5A&ctz=Europe%2FBerlin" style=" border-width:0 " width="100%" height="840" frameborder="0" scrolling="no"></iframe>
+<iframe src="gcalendar-wrapper.php?showTitle=0&showPrint=0&showCalendars=0&height=800&wkst=2&src=danny.koppenhagen%40t-online.de&color=%232952A3&src=de.german%23holiday%40group.v.calendar.google.com&color=%23AB8B00&amp;src=e_2_de%23weeknum%40group.v.calendar.google.com&color=%23865A5A&ctz=Europe%2FBerlin" style=" border-width:0 " width="100%" height="740" frameborder="0" scrolling="no"></iframe>
 
   </div>
 
