@@ -5,7 +5,7 @@ Config::init();
 
 
 <!DOCTYPE HTML>
-<html>
+<html id="scrollbar">
 <head>
   <?php require "head.php";  ?>
   <link rel="stylesheet" href="media/lvb.css" type="text/css">

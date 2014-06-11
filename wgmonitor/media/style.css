@@ -3,11 +3,61 @@
 html
 { 
 	width:99%;
+	margin:0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+	
 }
 
 *
 { margin: 0;
-  padding: 0;}
+  padding: 0;
+ }
+ 
+ 
+ /* ------------------------------------------------------------ SCROLLBAR
+*/
+/* Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
+*/
+::-webkit-scrollbar {
+	width:30px;
+	background-color:rgba(0,0,0,1); /* Safari. Lion's OS dark bg impacts Safari browser */
+}
+::-webkit-scrollbar-button {
+	width:0;
+	height:0;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+	/* background-image: url(scrollbar/arrow-up.png), -webkit-linear-gradient(left,  #f9f9f9 50%,#e2e2e2 100%) ; */
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+	
+}
+
+::-webkit-scrollbar-corner {
+	/*background:transparent;*/
+}
+
+
+/* On Bright
+*/
+
+::-webkit-scrollbar-thumb {
+	background-color:rgba(255,255,255,.6);
+		border-radius: 8px;
+		height:100px;
+		/*Boc shaddos, seperated with commas, to combine shadows*/
+		box-shadow: -3px -3px 6px rgba(255,255,255,0.7) inset;
+
+}
+
+
+
+ 
+
 
 
 
