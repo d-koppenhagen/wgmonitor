@@ -17,8 +17,7 @@ Config::init();
           
           <!-- Begin Dateien auslsen -->
           <?php
-		//$directory = 'gallery';
-		$directory = '/media/EOS_DIGITAL/pictures';
+		$directory = 'gallery';
 		$alledateien = scandir($directory); //Ordner "medien" auslesen
 		
 		if(is_dir($directory)){	//check if Path exists
@@ -29,11 +28,11 @@ Config::init();
 				if ($datei != "." && $datei != ".."  && $datei != "_notes" && $datei != ".DS_Store") {
 		   			$data=$directory.'/'.$datei;
 		   			echo '
-  		            <div class="col-lg-3 col-md-3 col-xs-10 thumb">
+  		            <div class="col-lg-3 col-md-2 col-xs-8 thumb center-block">
   		             <div class="panel panel-default">
 		              <div class="panel-body">
   		                <a href="'.$data.'" title="'.$datei.'" data-gallery>
-    		    			<img src="'.$data.'" alt="'.$datei.'" width="200px;">
+    		    			<img src="'.$data.'" alt="'.$datei.'" width="180px;">
     					</a>
     		          </div>
 					 </div>
