@@ -106,3 +106,12 @@ document.onclick=reEnable
 }
 </script>
 <!-- End of Script -->
+
+<!-- Script to close the Window -->
+<script>
+function closeWindow(){
+	window.open('', '_self', ''); //bug fix
+	window.close();
+}
+</script>
+<!-- end script -->

@@ -32,7 +32,7 @@ Config::init();
   		             <div class="panel panel-default">
 		              <div class="panel-body">
   		                <a href="'.$data.'" title="'.$datei.'" data-gallery>
-    		    			<img src="'.$data.'" alt="'.$datei.'" width="180px;">
+    		    			<img src="'.$data.'" alt="'.$datei.'" style="max-height:150px; max-width:175px;">
     					</a>
     		          </div>
 					 </div>

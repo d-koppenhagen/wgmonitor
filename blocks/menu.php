@@ -7,6 +7,7 @@
 		<li id="menu3"><a href="guestbook.php"><span class="glyphicon glyphicon-pencil"></span> G&auml;stebuch</a></li>
 		<li id="menu4"><a href="contact.php"><span class="glyphicon glyphicon-envelope"></span> Kontakt</a></li>
         <li id="menu5"><a href="wgmonitor/"><span class="glyphicon glyphicon-tasks"></span> WG Monitor</a></li>
+        <li id="menu5"><a href="" onclick="closeWindow()"><span class="glyphicon glyphicon-remove"> Beenden</span></a></li>
       </ul>
       
 </nav>
