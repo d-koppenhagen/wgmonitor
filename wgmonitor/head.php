@@ -1,13 +1,20 @@
 <?php 
-    	require '../blocks/header.php';
+    	require 'blocks/header.php';
 ?>
 <title>Infoscreen</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<!-- Bootstrap Layout -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 <link rel="stylesheet" href="media/style.css" type="text/css">
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="media/bootstrap-image-gallery.min.css">
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- refresh Temp and Time-->
 <script>
 (function($){
     $(document).ready(function(){
@@ -23,12 +30,6 @@
                 $('#loading').hide();
             }
         });
-
-		//plan table refresh
-        $("#content").load("content.php");
-        var contentRefreshId = setInterval(function(){
-            $("#content").load('content.php');
-        }, <?php echo Config::$pref['refreshplan'] * 1000 ?>);
         
         
 		//temperature refresh
@@ -44,6 +45,8 @@
     });
 })(jQuery);
 </script>
+<!-- End Script -->
+
 <script>
 //load news and start fading
 function loadnews(){
@@ -106,6 +109,26 @@ document.onclick=reEnable
 }
 </script>
 <!-- End of Script -->
+
+<!-- Script to close the Window -->
+<script>
+function closeWindow(){
+	window.open('', '_self', ''); //bug fix
+	window.close();
+}
+</script>
+<!-- end script -->
+
+
+<!-- refresh Weather container -->
+<script>
+$(document).ready(function(){
+  setInterval(function(){
+    $('#sidebarRefresh').load('sidebar.php');
+  },1800000);
+});
+</script>
+<!-- End Script -->
 
 <!-- Script to close the Window -->
 <script>

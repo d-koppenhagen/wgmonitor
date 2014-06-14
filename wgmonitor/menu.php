@@ -1,11 +1,11 @@
 
       <ul class="nav nav-tabs nav-justified">
         <!-- for colorate active link use: <li class="active"> -->
-        <li id="menu0"><a href="../index.php"><span class="glyphicon glyphicon-circle-arrow-left"></span></a></li>
-        <li id="menu1"><a href="index.php"><span class="glyphicon glyphicon-home"></span> LVB Info</a></li>
-        <li id="menu2"><a href="timetable.php"><span class="glyphicon glyphicon-calendar"></span> Kalender</a></li>
-        <li id="menu5"><a href="gallery.php"><span class="glyphicon glyphicon-camera"></span> Bilder</a></li>
-		<li id="menu3"><a href="buy.php"><span class="glyphicon glyphicon-shopping-cart"></span> Einkaufsliste</a></li>
-        <li id="menu5"><a href="chefkoch.php"><span class="glyphicon glyphicon-cutlery"></span> Chefkoch</a></li>
+        <li id="Home"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Übersicht</a></li>
+        <li id="LVB"><a onClick="$( '#contentLeftColumn' ).load( 'lvb.php' );"><span class="glyphicon glyphicon-th-list"></span> LVB Info</a></li>
+        <li id="Kalender"><a onClick="$( '#contentLeftColumn' ).load( 'timetable.php' );"><span class="glyphicon glyphicon-calendar"></span> Kalender</a></li>
+        <li id="Bilder"><a onClick="$( '#contentLeftColumn' ).load( 'gallery.php' );"><span class="glyphicon glyphicon-camera"></span> Bilder</a></li>
+		<li id="Einkaufsliste"><a onClick="$( '#contentLeftColumn' ).load( 'buy.php' );"><span class="glyphicon glyphicon-shopping-cart"></span> Einkaufsliste</a></li>
+        <li id="Chefkoch"><a onClick="$( '#contentLeftColumn' ).load( 'chefkoch.php' );"><span class="glyphicon glyphicon-cutlery"></span> Chefkoch</a></li>
       </ul>
       

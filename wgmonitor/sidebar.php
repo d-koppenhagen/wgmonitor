@@ -1,4 +1,3 @@
-<div class="col-md-4">
 <ul class="nav nav-tabs nav-justified">
 	<li><a href="">Aktuelle Temperatur: <span id="temp"></span></a></li>
     <li><a href=""><span id="curTime"></span> Uhr</a></li>
@@ -9,4 +8,3 @@
 </table>
 <p id="news_content">...</p>
 <!--<ul id="news_content" class="list-group"></ul>-->
-</div>

@@ -1,21 +1,21 @@
 @charset "UTF-8";
 /* CSS Document */
 html
-{ 
+{
 	width:99%;
 	margin:0;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	
-	
+
+
 }
 
 *
 { margin: 0;
   padding: 0;
  }
- 
- 
+
+
  /* ------------------------------------------------------------ SCROLLBAR
 */
 /* Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
@@ -34,12 +34,12 @@ html
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-	
+
 }
 
 ::-webkit-scrollbar-corner {
 	/*background:transparent;*/
-	
+
 }
 
 
@@ -47,19 +47,66 @@ html
 */
 
 ::-webkit-scrollbar-thumb {
-	background-color:rgba(255,255,255,.6);
+	background-color:rgba(255,255,255,.1);
 		border-radius: 8px;
 		height:100px;
 		/*Boc shaddos, seperated with commas, to combine shadows*/
-		box-shadow: -3px -3px 6px rgba(255,255,255,0.7) inset;
 
+}
+
+.thumbnail{
+	border:none;
 }
 
 
 
- 
+/* Slideshow */
 
 
+#slidecontainer .prevButton{
+	height:72px;
+	width:68px;
+	position:absolute;
+	background:url('images/buttons.png') no-repeat;
+	top:50%;
+	margin-top:-36px;
+	cursor:pointer;
+	z-index:2000;
+	background-position:left top;
+	left:0
+}
+
+#slidecontainer .nextButton{
+	height:72px;
+	width:68px;
+	position:absolute;
+	background:url('images/buttons.png') no-repeat;
+	top:50%;
+	margin-top:-36px;
+	cursor:pointer;
+	z-index:2000;
+	background-position:right top;
+	right:0
+}
+
+#slidecontainer ul{
+	width:604px;
+	height:453px;
+	list-style:none outside none;
+	position:relative;
+	overflow:hidden;
+}
+
+#slidecontainer li:first-child{
+	display:list-item;
+	position:absolute;
+}
+
+#slidecontainer li{
+	position:absolute;
+	display:none;
+}
+/* End Slideshow */
 
 
 
