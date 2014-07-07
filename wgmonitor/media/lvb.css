@@ -24,19 +24,18 @@ td.icon{
 	font-weight: bold;
 	
 }
-
-td.info div.time{
+.stationtime{
 	font-size: 20px;
 	font-weight: bold;
 	padding-left:20px;
 }
 
-td.info div.label{
-	font-size: 13px;
+.stationlabel{
+	font-size: 14px;
 	padding:0px 10px 0px 10px;
 }
 
-td.info div.time span.timeDiff{
+.stationtimeDiff{
 	color: #cb0e0e;
 	font-size: 14px;
 }

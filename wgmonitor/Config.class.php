@@ -6,7 +6,7 @@ class Config{
 	public static function init(){
 		self::$pref = array(
 			"stations" => array(13247,11563),  //LVB-Stationen
-			"showmax"  => 11, //Anzahl der Stationen
+			"showmax"  => 10, //Anzahl der Stationen
 			"refreshplan" => 373, //Aktualisierungszeit vom Abfahrtsmonitor - sek
 		
 			"weather_location" => "51.342065,12.377057", //Wetterkoordinaten

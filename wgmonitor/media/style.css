@@ -1,19 +1,19 @@
 @charset "UTF-8";
 /* CSS Document */
-html
-{
-	width:99%;
-	margin:0;
+html {
+	width: 99%;
+	margin: 0;
 	overflow-x: hidden;
 	overflow-y: scroll;
-
-
+}
+* {
+	margin: 0;
+	padding: 0;
 }
 
-*
-{ margin: 0;
-  padding: 0;
- }
+body{
+	color:#CCC;
+}
 
 
  /* ------------------------------------------------------------ SCROLLBAR
@@ -21,24 +21,23 @@ html
 /* Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
 */
 ::-webkit-scrollbar {
-	width:30px;
-	background-color:rgba(0,0,0,1); /* Safari. Lion's OS dark bg impacts Safari browser */
+ width:30px;
+ background-color:rgba(0,0,0,1); /* Safari. Lion's OS dark bg impacts Safari browser */
 }
 ::-webkit-scrollbar-button {
-	width:0;
-	height:0;
+ width:0;
+ height:0;
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-	/* background-image: url(scrollbar/arrow-up.png), -webkit-linear-gradient(left,  #f9f9f9 50%,#e2e2e2 100%) ; */
+/* background-image: url(scrollbar/arrow-up.png), -webkit-linear-gradient(left,  #f9f9f9 50%,#e2e2e2 100%) ; */
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-
 }
 
 ::-webkit-scrollbar-corner {
-	/*background:transparent;*/
+/*background:transparent;*/
 
 }
 
@@ -47,95 +46,36 @@ html
 */
 
 ::-webkit-scrollbar-thumb {
-	background-color:rgba(255,255,255,.1);
-		border-radius: 8px;
-		height:100px;
-		/*Boc shaddos, seperated with commas, to combine shadows*/
+ background-color:rgba(255,255,255,.1);
+ border-radius: 8px;
+ height:100px;
+/*Boc shaddos, seperated with commas, to combine shadows*/
 
 }
-
-.thumbnail{
-	border:none;
+.thumbnail {
+	border: none;
 }
 
 
-
-/* Slideshow */
-
-
-#slidecontainer .prevButton{
-	height:72px;
-	width:68px;
-	position:absolute;
-	background:url('images/buttons.png') no-repeat;
-	top:50%;
-	margin-top:-36px;
-	cursor:pointer;
-	z-index:2000;
-	background-position:left top;
-	left:0
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#slidecontainer .nextButton{
-	height:72px;
-	width:68px;
-	position:absolute;
-	background:url('images/buttons.png') no-repeat;
-	top:50%;
-	margin-top:-36px;
-	cursor:pointer;
-	z-index:2000;
-	background-position:right top;
-	right:0
+.element {
+  .center-block();
 }
 
-#slidecontainer ul{
-	width:604px;
-	height:453px;
-	list-style:none outside none;
-	position:relative;
-	overflow:hidden;
+/*Temp-Colors*/
+.temp_min{
+	color:#09F;
 }
 
-#slidecontainer li:first-child{
-	display:list-item;
-	position:absolute;
+.temp_max{
+	color:#F30;
 }
 
-#slidecontainer li{
-	position:absolute;
-	display:none;
+.form-control{
+	background-color:#F0F0F0;
 }
-/* End Slideshow */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

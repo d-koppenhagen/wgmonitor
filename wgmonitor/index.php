@@ -13,12 +13,27 @@ Config::init();
 <div class="row">
   <div class="col-md-8">
   		<?php require_once ("menu.php");?> 
+        <!-- the following container will be filled with Ajax after loading...-->
         <div id="contentLeftColumn">
-        	<span class="help-block">  </span>
-  			<button type="button" class="btn btn-danger btn-lg" onclick="closeWindow()"><span class="glyphicon glyphicon-remove-circle" ></span> Beenden</button>
-            
-            
-  		</div>
+         <script> //preload after the rest is loading:
+		 	$( document ).ready(function() {
+				$( '#contentLeftColumn' ).load( 'start.php' );
+			});
+         </script>
+  
+  
+
+<?php
+    $xml = simplexml_load_file('http://feeds.feedburner.com/blogspot/rkEL?format=xml');
+    
+	
+	foreach ($xml->movie as $item) {
+   print_r( $items->item, '<br />');
+}
+?>
+         
+         
+        </div>
   </div>
   <div class="col-md-4" id="sidebarRefresh">
   	<?php require "sidebar.php";?>
@@ -52,6 +67,10 @@ Config::init();
                         <i class="glyphicon glyphicon-chevron-left"></i>
                         Previous
                     </button>
+                    <button type="button" class="btn btn-default">
+                        Slideshow
+                        <i class="glyphicon glyphicon-play-circle"></i>
+                    </button>
                     <button type="button" class="btn btn-primary next">
                         Next
                         <i class="glyphicon glyphicon-chevron-right"></i>
@@ -62,6 +81,41 @@ Config::init();
     </div>
 </div>
 <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+
+<!-- Container for Virtual Keyboard -->
+<div id="keyboardIcon" onclick="showKeyboard('txtContent');"></div>
+<div id="virtualKeyboard"></div>
+<!-- End: Container for Virtual Keyboard -->
+
+<script type="text/javascript">
+        $(function () {
+            jsKeyboard.init("virtualKeyboard");
+            $("#txtContent").val(initText);
+        });
+
+        function focusIt(t) {
+            // define where the cursor is to write character clicked.
+            jsKeyboard.currentElement = $(t);
+            jsKeyboard.show();
+        }
+
+        function showKeyboard(id) {
+            clean($("#" + id));
+            jsKeyboard.currentElement = $("#" + id);
+            jsKeyboard.show();
+        }
+        var isCleaned = false;
+        function clean(t) {
+            if (!isCleaned) {
+                $(t).text("");
+                isCleaned = true;
+            }
+        }
+        var initText = "click to here to start writing...";
+</script>
+
+
+<script src="js/jsKeyboard.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>

@@ -3,10 +3,10 @@
 {LINENUM}
 </td>
 <td>
-	<div class="label">{LABEL}</div>
-	<div class="time">
+	<div class="stationlabel">{LABEL}</div>
+	<div class="stationtime">
 		{TIME}
-		<span class="timeDiff">{TIMEDIFF}</span>
+		<span class="stationtimeDiff">{TIMEDIFF}</span>
 	</div>
 </td>
 </tr>
