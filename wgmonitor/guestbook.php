@@ -6,7 +6,7 @@
         <input type="text" class="webform form-control" id="name" placeholder="Dein Name"  name="name" required style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" />
       </div>
       <div class="col-xs-6">
-        <button class="webform btn btn-default btn-block" type="submit" id="btnSuccess">Einen neuen Eintrag Hinzufügen</button>
+        <button class="webform btn btn-default btn-block" type="submit" id="btnSuccess">Einen neuen Eintrag hinzufügen</button>
       </div>
     </div>
     <span class="help-block"></span>

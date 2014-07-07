@@ -121,10 +121,12 @@ var jsKeyboard = {
         jsKeyboard.currentElement.val(t);
     },
     show: function() {
-        $("#keyboard").animate({ "bottom": "0" }, "slow", function() { });
+		$("#keyboard").animate({ "bottom": "0" }, "slow", function() { });
+		$("#keyboard").css('visibility','visible');
     },
     hide: function() {
-        $("#keyboard").animate({ "bottom": "-380px" }, "slow", function() { });
+		//$("#keyboard").animate({ "bottom": "-380px" }, "slow", function() { });
+		$("#keyboard").css('visibility','hidden');
     },
     defaultKeyboard: {
         capitalLetter:
