@@ -7,7 +7,13 @@ this is a simple touchscreen interfaece with some nice features:
 * Gallery (on available from localhost)
 * Guestbook
 
-A Preview you can found on: http://1111101.eu/wgmonitor/
+## Preview
+* project cloned on: http://1111101.eu/wgmonitor/
+* preview images of the touchscreen:
+      * http://doerki.com/img/infoscreen/pic01.JPG
+      * http://doerki.com/img/infoscreen/pic02.JPG
+      * http://doerki.com/img/infoscreen/pic03.JPG
+      * http://doerki.com/img/infoscreen/pic04.JPG
 
 ## Configuration for staions
 * edit: /wgmonitor/Config.class.php
