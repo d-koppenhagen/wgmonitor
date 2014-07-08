@@ -9,7 +9,7 @@ Config::init();
   <?php require "head.php";  ?>
   <link rel="stylesheet" href="media/lvb.css" type="text/css">
 </head>
-<body>
+<body id="main">
 <div class="row">
   <div class="col-md-8">
   		<?php require_once ("menu.php");?> 
@@ -83,14 +83,13 @@ Config::init();
 <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 
 <!-- Container for Virtual Keyboard -->
-<div id="keyboardIcon" onclick="showKeyboard('txtContent');"></div>
 <div id="virtualKeyboard"></div>
 <!-- End: Container for Virtual Keyboard -->
 
 <script type="text/javascript">
-        $(function () {
+       $(function () {
             jsKeyboard.init("virtualKeyboard");
-            $("#txtContent").val(initText);
+			jsKeyboard.hide();
         });
 
         function focusIt(t) {
@@ -111,7 +110,6 @@ Config::init();
                 isCleaned = true;
             }
         }
-        var initText = "click to here to start writing...";
 </script>
 
 

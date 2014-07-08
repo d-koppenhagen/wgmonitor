@@ -2,7 +2,7 @@
 /* CSS Document */
 html {
 	width: 99%;
-	margin: 0;
+	margin: 5px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -78,4 +78,8 @@ body{
 
 .form-control{
 	background-color:#F0F0F0;
+}
+
+.help-block-start{
+	height:12px;
 }
