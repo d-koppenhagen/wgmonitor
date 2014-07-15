@@ -15,5 +15,6 @@ this is a simple touchscreen interfaece with some nice features:
       * http://doerki.com/img/infoscreen/pic03.JPG
       * http://doerki.com/img/infoscreen/pic04.JPG
 
-## Configuration for staions
-* edit: /wgmonitor/Config.class.php
+## Configuration
+* move: wgmonitor/commonSample to wgmonitor/Common and edit the config files for your own database configuration, etc.
+* to change LVB Stations just edit: /wgmonitor/Config.class.php
