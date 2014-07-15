@@ -1,3 +1,30 @@
+<p id="PostillonTitle"></p>
+<p id="PostillonText"></p>
+ 
 <script>
-var myRequest = new XMLHttpRequest();
+$(document).ready(function()
+{
+  $.ajax({
+    type: "GET",
+    url: "http://feeds.feedburner.com/blogspot/rkEL?format=xml",
+    dataType: "xml",
+    success: parseXml
+  });
+});
+
+function parseXml(xml)
+{
+  //find every Tutorial and print the author
+  $(xml).find("title").each(function()
+  {
+    $("#output").append($(this).attr("author") + "<br />");
+  });
+
+  // Output:
+  // The Reddest
+  // The Hairiest
+  // The Tallest
+  // The Fattest
+}
+
 </script>

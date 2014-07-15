@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="media/bootstrap-image-gallery.min.css">
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<!-- Load Script for Webcam-->
+<script src="../script.js"></script>
+
 <!-- refresh Temp and Time-->
 <script>
 (function($){

@@ -8,6 +8,8 @@
 		<!--<li id="Einkaufsliste"><a onClick="$( '#contentLeftColumn' ).load( 'buy.php' );"><span class="glyphicon glyphicon-shopping-cart"></span> Einkaufsliste</a></li>
         <li id="Chefkoch"><a onClick="$( '#contentLeftColumn' ).load( 'chefkoch.php' );"><span class="glyphicon glyphicon-cutlery"></span> Chefkoch</a></li>
         -->
-        <li id="Guestbook"><a onClick="$( '#contentLeftColumn' ).load( 'guestbook.php' );"><span class="glyphicon glyphicon-pencil"></span> Gästebuch</a></li>
+        <li id="Guestbook"><a onClick="$( '#contentLeftColumn' ).load( 'guestbook.php' );"><span class="glyphicon glyphicon-comment"></span> Gästebuch</a></li>
+        
+        
       </ul>
       

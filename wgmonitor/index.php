@@ -21,16 +21,7 @@ Config::init();
 			});
          </script>
   
-  
-
-<?php
-    $xml = simplexml_load_file('http://feeds.feedburner.com/blogspot/rkEL?format=xml');
-    
-	
-	foreach ($xml->movie as $item) {
-   print_r( $items->item, '<br />');
-}
-?>
+ 
          
          
         </div>
@@ -67,11 +58,11 @@ Config::init();
                         <i class="glyphicon glyphicon-chevron-left"></i>
                         Previous
                     </button>
-                    <button type="button" class="btn btn-default">
+                    <button type="button" class="btn btn-default" onclick="jQuery.event.trigger({ type : 'keypress', which : '39' });">
                         Slideshow
                         <i class="glyphicon glyphicon-play-circle"></i>
                     </button>
-                    <button type="button" class="btn btn-primary next">
+                    <button type="button" class="btn btn-primary next" id="#nextPicture">
                         Next
                         <i class="glyphicon glyphicon-chevron-right"></i>
                     </button>
