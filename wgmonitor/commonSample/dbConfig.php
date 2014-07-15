@@ -1,9 +1,10 @@
 <?php
 
-$SERVER = "mysql:host=v22014011965216296.yourvserver.net;
-             dbname=wg";
-$BENUTZER = "wgadmin"; // Datenbank-User (Benutzername)
-$PASSWORT = "hftl_kmi12"; // Datenbank-Passwort
+$SERVER = "mysql:host=localhost;
+             dbname=DATABASENAME";
+$BENUTZER = "USERNAME"; // Datenbank-User (Benutzername)
+$PASSWORT = "PASSWORD"; // Datenbank-Passwort
+
 
 // Zeichensatz UTF-8 bei der Verbindung setzen
 $OPTION = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");

@@ -1,3 +1,2 @@
 wgmonitor/gallery/**
-wgmonitor/common/dbConfig.php
-wgmonitor/common/wlanConfig.php
+wgmonitor/common/**
