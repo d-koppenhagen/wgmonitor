@@ -10,7 +10,8 @@ Config::init();
   <link rel="stylesheet" href="media/lvb.css" type="text/css">
 </head>
 <body id="main">
-<div class="row">
+<div  class="container-fluid">
+ <div class="row">
   <div class="col-md-8">
   		<?php require_once ("menu.php");?> 
         <!-- the following container will be filled with Ajax after loading...-->
@@ -109,6 +110,6 @@ Config::init();
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
-
+ </div>
 </body>
 </html>

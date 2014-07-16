@@ -1,34 +1,36 @@
 <?php require_once("common/wlanConfig.php"); Config::init(); ?>
-
-<span class="help-block"> </span>
-<div class="row">
-  <div class="col-md-4">
-    <h1>Gallerie</h1>
-    <p>Um Zur Großbildansicht zu gelangen, bitte auf eines der Miniaturbilder klicken</p>
-  </div>
-  <div class="col-md-5">
+<div class="row">   
+  <div class="col-md-9">
+  	<h1>Gallerie</h1>
     <h4>Bilder auf deinem Mobilgerät abrufen:</h4>
-    <ol>
-      <li>Logge dich im WLAN ein:</li>
-      <ul>
-        <li>SSID: "<?php echo Config::$pref['wlanssid'] ?>"</li>
-        <li>Kennwort: "<?php echo Config::$pref['wlankey'] ?>"</li>
-      </ul>
-      <li>Scanne den QR Code mit deinem Mobilgerät</li>
-      <ul>
-        <li>Alternativ kannst du auch im Browser die folgende Seite aufrufen: "http://10.0.1.100/wgmonitor/gallery"</li>
-      </ul>
-    </ol>
+		<ol>
+        	<li>
+            	<ul class="list-inline">
+                	<li>Logge dich im WLAN ein:</li>
+                    <li> </li>
+            		<li>WLAN-Name (SSID): "<?php echo Config::$pref['wlanssid'] ?>"</li>
+                    <li> - </li>
+                    <li>Kennwort: "<?php echo Config::$pref['wlankey'] ?>"</li>
+      			</ul>
+            </li>
+            <li>Scanne den QR Code mit deinem Mobilgerät </li>
+      		<ul>
+            	<li>Alternativ kannst du auch im Browser die folgende Seite aufrufen: http://10.0.1.100/wgmonitor/gallery </li>
+            </ul>
+    	</ol>
   </div>
   <div class="col-md-3">
+  	<span class="help-block help-block-start"></span>
     <div style=" width:158px;">
-      <div class="thumbnail"  style="background-color: #ffffff;">
+      <!--<div class="thumbnail"  style="background-color: #ffffff;">
         <div id="qrcode"></div>
-      </div>
+      </div>-->
+       <div id="qrcode"></div>
     </div>
   </div>
 </div>
-<div class="row"> 
+  	<span class="help-block help-block-start"></span>
+
   <!-- Begin Dateien auslsen -->
   <?php
 		$directory = 'gallery';
@@ -37,13 +39,14 @@
 		if(is_dir($directory)){	//check if Path exists
 			foreach ($alledateien as $datei) { // Ausgabeschleife
 			// scandir liest alle Dateien im Ordner aus, zusätzlich noch "." , ".." als Ordner
-		    // Nur echte Dateien anzeigen lassen und keine "Punkt" Ordner
-			//   <a href="'.$data.'" title="'.$datei.'" data-gallery>
-				if ($datei != "." && $datei != ".."  && $datei != "_notes" && $datei != ".DS_Store" && $datei != "thumbs" && $datei != "index.php") {
+				
+				$data=$directory.'/'.$datei;
+				
+				$extensioncheck=pathinfo($datei);
+				if (strtolower($extensioncheck['extension'])==("jpg")) {
 					$thumb=$directory.'/thumbs/'.$datei;
-		   			$data=$directory.'/'.$datei;
 		   			echo '
-  		            <div class="col-xs-8 col-md-3" id="image'.$datei.'">
+  		            <div class="col-xs-12 col-md-4 col-lg-3" id="image'.$datei.'">
   		                <a href="'.$data.'" data-gallery class="thumbnail">
 							<div class="well well-lg">
 								<img src="'.$thumb.'" style="max-width:100%;" class="center-block">
@@ -51,6 +54,14 @@
     					</a>
 					</div>
     		        ';
+				} else
+				if (is_dir($data) && $datei != "." && $datei != ".." && $datei != "thumbs") {
+					echo '
+					<div class="col-xs-6 col-md-4 col-lg-3">
+						<button type="button" class="btn btn-primary btn-lg btn-block">
+							<span class="glyphicon glyphicon-folder-open"></span><br>'.$datei.'
+						</button>
+					</div>';
 				};
 			};
 		} else {
@@ -58,8 +69,6 @@
 		};
 		?>
   <!-- end Dateien auslesen --> 
-</div>
-
 <script type="text/javascript" src="js/qrcode.js"></script> 
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {

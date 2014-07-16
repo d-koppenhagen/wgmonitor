@@ -1,18 +1,8 @@
 @charset "UTF-8";
 /* CSS Document */
-html {
-	width: 99%;
-	margin: 5px;
-	overflow-x: hidden;
-	overflow-y: scroll;
-}
-* {
-	margin: 0;
-	padding: 0;
-}
 
 body{
-	color:#CCC;
+	color:#e0e0e0;
 }
 
 

@@ -1,1 +1,1 @@
-ready
+Error: Could not create camera

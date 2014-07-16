@@ -6,13 +6,13 @@
         <input type="text" class="webform form-control" id="name" placeholder="Dein Name"  name="name" required style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" />
       </div>
       <div class="col-xs-6">
-        <button class="webform btn btn-default btn-block" type="submit" id="btnSuccess">Einen neuen Eintrag hinzufügen</button>
+        <button class="webform btn btn-default btn-block" type="submit" id="btnSuccess"><span class="glyphicon glyphicon-plus"></span> Einen neuen Eintrag hinzufügen</span></button>
       </div>
     </div>
     <span class="help-block"></span>
     <div class="row">
       <div class="col-xs-12">
-        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Dein Text"  name="nachricht" required  rows="6" style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''"  />
+        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Dein Text"  name="nachricht" required  rows="5" style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''"  />
       </div>
     </div>
   </form>
@@ -31,8 +31,26 @@ $listitem = $kommando->fetchAll(PDO::FETCH_OBJ);
 foreach ($listitem as $item) {
 	$itemNumber = $item->id;
  echo '
+<div class="well">
+  	<div class="row">
+		<div class="col-md-3" style="border-right:dashed;">
+    			<h4>'.$item->name .'</h4>
+				am ' .date('d.m.Y', strtotime($item->timestamp)) .'
+				um ' .date('H:i', strtotime($item->timestamp)) .'
+		</div>
+		<div class="col-md-9">
+			   ' .$item->text .'
+		</div>
+	</div>
+ </div>
  
- <div class="panel panel-default">
+
+';
+}
+
+
+
+/*<div class="panel panel-default">
   <div class="panel-heading">
   	<div class="row">
 		<div class="col-md-9">
@@ -47,12 +65,14 @@ foreach ($listitem as $item) {
   <div class="panel-body">
     ' .$item->text .'
   </div>
-</div>
-';
-}
+</div>*/
+
 
 ?>
+
+
 	</div>
+
 </div>
 
 
