@@ -1,7 +1,5 @@
 <?php require_once("common/wlanConfig.php"); Config::init(); ?>
-<h2>WG Monitor - Übersicht</h2>
-  			<hr>
-       
+<h2>WG Monitor - Übersicht</h2>       
 <div class="row">
 	<div class="col-md-12">
     <div class="well well-sm">
@@ -17,13 +15,23 @@
 </div>
 
 
-<h3>Funktionen und Tools</h3>
+<h3>Kommende Veranstaltungen:</h3>
 <!-- row 1 -->
+<div class="row">
+	<div class="col-md-12">
+		<ul>
+        	<li><h4>21. Juli: Semesterabschluss-Besäufniss</h4></li>
+        </ul>
+    </div>
+</div>
+
+<!--<h3>Funktionen und Tools</h3>
 <div class="row">
   <div class="col-md-3">
   
    <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( '../index.php' );" style="width:100%"><span class="glyphicon glyphicon-facetime-video"></span><br>Webcam</button>
-  
+ 
+ --> 
   <!--	<button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'buy.php' );" style="width:100%"><span class="glyphicon glyphicon-th-list"></span><br>Einkaufsliste</button>
   -->
     
@@ -42,9 +50,9 @@
   	<button type="button" class="btn btn-primary btn-lg center-block" onclick="location.reload();"  style="width:100%"><span class="glyphicon glyphicon-refresh" ></span><br>Seite neu laden</button>
   </div>
   
-  <div class="col-md-3">
+  <!--<div class="col-md-3">
   	<button type="button" class="btn btn-primary btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'settings.php' );"  style="width:100%"><span class="glyphicon glyphicon-cog" ></span><br>Verwaltung</button>
-  </div>
+  </div>-->
   
   <div class="col-md-3">
   	<button type="button" class="btn btn-danger btn-lg center-block" onclick="closeWindow()" style="width:100%"><span class="glyphicon glyphicon-off"></span><br>Beenden</button>

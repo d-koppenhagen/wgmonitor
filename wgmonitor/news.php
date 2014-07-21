@@ -14,10 +14,11 @@ $rss->date_format = "l";
 if($rs = $rss->get(Config::$pref['rssurl'])){
 	foreach($rs['items'] AS $item){
 		if(!Config::$pref['tagesschau_onlytoday'] OR ($item['pubDate'] == $rs['lastBuildDate'])){ //only show posts from today
-			echo "<li class='list-group-item'>";
+			echo "<ul class='list-group'>
+<li class='list-group-item'>";
 			echo "<h4>".$item['title']."</h4>";
 			echo $item['description'];
-			echo "</li>";
+			echo "</li></ul>";
 		}
 	}
 }

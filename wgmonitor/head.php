@@ -1,5 +1,6 @@
 <title>Infoscreen</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <!-- Bootstrap Layout -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -8,6 +9,7 @@
 <link rel="stylesheet" href="media/style.css" type="text/css">
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="media/bootstrap-image-gallery.min.css">
+<link rel="stylesheet" href="media/lvb.css" type="text/css">
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -56,6 +58,7 @@ function loadnews(){
 	});
 }
 </script>
+
 <script>
 //function for fading news elements      
 function fadeinout(e){
@@ -95,7 +98,7 @@ function checkTime(i){
 
 
 <!-- Script to disable to mark text -->
-<script language="JavaScript1.2">
+<script>
 function disableselect(e){
 return false
 }

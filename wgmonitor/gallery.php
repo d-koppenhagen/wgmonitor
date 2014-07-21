@@ -33,7 +33,15 @@
 
   <!-- Begin Dateien auslsen -->
   <?php
-		$directory = 'gallery';
+  
+ 
+$dir = './gallery';
+
+$dirlist = getFileList($dir);
+
+
+function getFileList($directory)
+  {
 		$alledateien = scandir($directory); //Ordner "medien" auslesen
 		
 		if(is_dir($directory)){	//check if Path exists
@@ -67,7 +75,10 @@
 		} else {
 			echo "<p>Der Pfad ".$directory." existiert nicht! -> Config: gallery.php</p>";
 		};
-		?>
+
+  }
+  
+?>
   <!-- end Dateien auslesen --> 
 <script type="text/javascript" src="js/qrcode.js"></script> 
 <script type="text/javascript">

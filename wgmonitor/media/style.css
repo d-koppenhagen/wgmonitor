@@ -1,8 +1,23 @@
 @charset "UTF-8";
 /* CSS Document */
+html{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
 
 body{
 	color:#e0e0e0;
+	padding-top: 70px;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color:#e0e0e0;
+	font-size: 16px;
+}
+
+.active{
+	color:#aaaaaa;
+	font-size: 16px;
 }
 
 
@@ -73,3 +88,18 @@ body{
 .help-block-start{
 	height:12px;
 }
+
+
+<!--Chefkoch.de Anpassungen:-->
+#ck-rezeptname {
+	font-size:1.6em;
+	color:#FFFFFF;
+	margin:10px;
+	font-weight:bold;
+	}
+	
+	#ck-zutaten, #ck-zubereitung, #ck-footer {
+	font-size:1.1em;
+	margin-left: 20px;
+	color:#FFFFFF;
+	}

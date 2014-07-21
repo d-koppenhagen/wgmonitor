@@ -1,20 +1,26 @@
  <span class="help-block"></span>
  
- <form  role="form" method="post" class="form-inline" id="gbform">
+ <form  role="form" method="post" id="gbform" class="form-horizontal" >
     <div class="row">
-      <div class="col-xs-6">
-        <input type="text" class="webform form-control" id="name" placeholder="Dein Name"  name="name" required style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" />
+      <div class="col-xs-10">
+        <div class="form-group">
+        <label for="name"  class="col-sm-2 control-label">Dein Name:</label>
+        <div class="col-sm-10">
+        <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann"  name="name" required style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" />
+      	</div>
+        </div>
+        <div class="form-group">
+        <label for="nachricht"  class="col-sm-2 control-label">Deine Nachricht</label>
+        <div class="col-sm-10">
+        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen"  name="nachricht" required  rows="4" style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''"  />
+        </div>
+        </div>
       </div>
-      <div class="col-xs-6">
-        <button class="webform btn btn-default btn-block" type="submit" id="btnSuccess"><span class="glyphicon glyphicon-plus"></span> Einen neuen Eintrag hinzufügen</span></button>
+      <div class="col-xs-2">
+        <button class="webform btn btn-primary btn-block btn-lg" type="submit" id="btnSuccess" style="height:152px;"><span class="glyphicon glyphicon-plus"></span><br><br>Eintrag<br>hinzufügen</span></button>
       </div>
     </div>
-    <span class="help-block"></span>
-    <div class="row">
-      <div class="col-xs-12">
-        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Dein Text"  name="nachricht" required  rows="5" style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''"  />
-      </div>
-    </div>
+    
   </form>
 	
 <hr>
