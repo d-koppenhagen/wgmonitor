@@ -1,14 +1,23 @@
-<table class="table table-striped">
+<table class="table table-striped text-center">
  
- <!--Start: Wetter.com Script-->
- <!--Erstellen der Vorhersagetabelle-->
+ 
   <?php 
+    
+	function CityCode($city) {
+			if ($city == "default"){
+				return "DE0006194"; //return Leipzig as default
+			} else return $city;
+	}
+	
+	
     /*Zusammensetzen der Request-URL*/
 	$sSearchUrl     = 'http://api.wetter.com/forecast/weather'; 
 	$sProjectName   = 'wgwidget'; //Projektname, wie er in der Projektverwaltung von wetter.com angegeben wurde
 	$sApiKey = 'a5c25475310f06e73db1c8e21f8fcb4e'; //zugeteilter Api Key, findet Ihr ebenefalls in der Projektverwaltung
 	
-	$citycode="DE0006194"; //City-Code des Standortes
+	//$citycode="DE0006194"; //City-Code des Standortes
+	$citycode=CityCode("default");
+	
 	$sChecksum  = md5($sProjectName . $sApiKey .  $citycode);
 	$sSearchUrl .= '/city/' . $citycode;
 	$sSearchUrl .= '/project/' . $sProjectName;
@@ -133,7 +142,6 @@
 	$wind_geschwindigkeit_uebermorgen = $api->forecast->date[2]->ws;
 	$wind_richtung_uebermorgen = $api->forecast->date[2]->wd_txt;
 	
-	
 ?>
 
 
@@ -142,58 +150,57 @@
 
   <tr>
     <th></th>
-    <th id="headline">heute <?php echo $datum_heute; ?></th>
-    <th id="headline">heute++ <?php echo $datum_morgen; ?></th>
-    <th id="headline">heute+2 <?php echo $datum_uebermorgen; ?></th>
+    <th><h4>heute <?php echo $datum_heute; ?></h4></th>
+    <th><h4>heute++ <?php echo $datum_morgen; ?></h4></th>
+    <th><h4>heute+2 <?php echo $datum_uebermorgen; ?></h4></th>
     </tr>
   <tr>
-    <td id="headline">Morgens:</td>
-    <td><img src="img/icons/d_<?php echo $wetter_heute_frueh; ?>_b.png" width="65" height="53" title="<?php echo $wetter_heute_frueh_txt;?>"/></td>
-    <td><img src="img/icons/d_<?php echo $wetter_morgen_frueh; ?>_b.png" width="65" height="53" title="<?php echo $wetter_morgen_frueh_txt;?>" /></td>
-    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_frueh; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_uebermorgen_frueh_txt;?>" /></td>
+    <td class="text-left"><h4>Morgens:</h4></td>
+    <td><img src="img/icons/d_<?php echo $wetter_heute_frueh; ?>_b.png" width="61" height="48" title="<?php echo $wetter_heute_frueh_txt;?>"/></td>
+    <td><img src="img/icons/d_<?php echo $wetter_morgen_frueh; ?>_b.png" width="61" height="48" title="<?php echo $wetter_morgen_frueh_txt;?>" /></td>
+    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_frueh; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_frueh_txt;?>" /></td>
     </tr>
   <tr>
-    <td id="headline">Mittags:</td>
-    <td><img src="img/icons/d_<?php echo $wetter_heute_mittag; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_heute_mittag_txt;?>"/></td>
-    <td><img src="img/icons/d_<?php echo $wetter_morgen_mittag; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_morgen_mittag_txt;?>" /></td>
-    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_mittag; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_uebermorgen_mittag_txt;?>"  /></td>
+    <td class="text-left"><h4>Mittags:</h4></td>
+    <td><img src="img/icons/d_<?php echo $wetter_heute_mittag; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_heute_mittag_txt;?>"/></td>
+    <td><img src="img/icons/d_<?php echo $wetter_morgen_mittag; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_morgen_mittag_txt;?>" /></td>
+    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_mittag; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_mittag_txt;?>"  /></td>
     </tr>
   <tr>
-    <td id="headline">Abends:</td>
-    <td><img src="img/icons/d_<?php echo $wetter_heute_abend; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_heute_abend_txt;?>" /></td>
-    <td><img src="img/icons/d_<?php echo $wetter_morgen_abend; ?>_b.png" alt="" width="65" height="53"  title="<?php echo $wetter_morgen_abend_txt;?>" /></td>
-    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_abend; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_uebermorgen_abend_txt;?>" /></td>
+    <td class="text-left"><h4>Abends:</h4></td>
+    <td><img src="img/icons/d_<?php echo $wetter_heute_abend; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_heute_abend_txt;?>" /></td>
+    <td><img src="img/icons/d_<?php echo $wetter_morgen_abend; ?>_b.png" alt="" width="61" height="48"  title="<?php echo $wetter_morgen_abend_txt;?>" /></td>
+    <td><img src="img/icons/d_<?php echo $wetter_uebermorgen_abend; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_abend_txt;?>" /></td>
     </tr>
   <tr>
-    <td id="headline">Nachts:</td>
-    <td><img src="img/icons/n_<?php echo $wetter_heute_nacht; ?>_b.png" width="65" height="53" title="<?php echo $wetter_heute_nacht_txt;?>" /></td>
-    <td><img src="img/icons/n_<?php echo $wetter_morgen_nacht; ?>_b.png" alt="" width="65" height="53"  title="<?php echo $wetter_morgen_nacht_txt;?>" /></td>
-    <td><img src="img/icons/n_<?php echo $wetter_uebermorgen_nacht; ?>_b.png" alt="" width="65" height="53" title="<?php echo $wetter_uebermorgen_nacht_txt;?>" /></td>
+    <td class="text-left"><h4>Nachts:</h4></td>
+    <td><img src="img/icons/n_<?php echo $wetter_heute_nacht; ?>_b.png" width="61" height="48" title="<?php echo $wetter_heute_nacht_txt;?>" /></td>
+    <td><img src="img/icons/n_<?php echo $wetter_morgen_nacht; ?>_b.png" alt="" width="61" height="48"  title="<?php echo $wetter_morgen_nacht_txt;?>" /></td>
+    <td><img src="img/icons/n_<?php echo $wetter_uebermorgen_nacht; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_nacht_txt;?>" /></td>
     </tr>
   <tr>
-    <td id="headline">Temperatur:<br />
-      (min/max)</td>
-    <td style="font-size:20px"><span class="temp_min"><?php echo $tmin_heute; ?></span> | <span class="temp_max"><?php echo $tmax_heute; ?></span></td>
-    <td style="font-size:20px"><span class="temp_min"><?php echo $tmin_morgen; ?></span> | <span class="temp_max"><?php echo $tmax_morgen; ?></span></td>
-    <td style="font-size:20px"><span class="temp_min"><?php echo $tmin_uebermorgen; ?></span> | <span class="temp_max"><?php echo $tmax_uebermorgen; ?></span></td>
+    <td class="text-left"><h4>Temperatur:</h4></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_heute; ?>°C</span> | <span class="temp_max"><?php echo $tmax_heute; ?>°C</span></h4></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_morgen; ?>°C</span> | <span class="temp_max"><?php echo $tmax_morgen; ?>°C</span></h4></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_uebermorgen; ?>°C</span> | <span class="temp_max"><?php echo $tmax_uebermorgen; ?>°C</span></h4></td>
     </tr>
   <tr>
-    <td id="headline">Niederschlagsrisiko:</td>
-    <td><?php echo $niederschlags_ws_heute;?>%</td>
-    <td><?php echo $niederschlags_ws_morgen;?>%</td>
-    <td><?php echo $niederschlags_ws_uebermorgen;?>%</td>
+    <td class="text-left"><h4>Niederschlagsrisiko:</h4></td>
+    <td><h4><?php echo $niederschlags_ws_heute;?>%</h4></td>
+    <td><h4><?php echo $niederschlags_ws_morgen;?>%</h4></td>
+    <td><h4><?php echo $niederschlags_ws_uebermorgen;?>%</h4></td>
     </tr>
   <tr>
-    <td id="headline">Windrichtung:</td>
+    <td class="text-left"><h4>Windrichtung:</h4></td>
     <td><img src="img/icons/<?php echo $wind_richtung_heute;?>.png" alt="<?php echo $wind_richtung_heute;?>" title="<?php echo $wind_richtung_heute;?>" width="50" height="50"/></td>
     <td><img src="img/icons/<?php echo $wind_richtung_morgen;?>.png" alt="<?php echo $wind_richtung_morgen;?>" title="<?php echo $wind_richtung_morgen;?>" width="50" height="50"/></td>
     <td><img src="img/icons/<?php echo $wind_richtung_uebermorgen;?>.png" alt="<?php echo $wind_richtung_uebermorgen;?>" title="<?php echo $wind_richtung_uebermorgen;?>" width="50" height="50"/></td>
     </tr>
   <tr>
-    <td id="headline">Windgeschwindigkeit:</td>
-    <td><?php echo $wind_geschwindigkeit_heute;?> km/h</td>
-    <td><?php echo $wind_geschwindigkeit_morgen;?> km/h</td>
-    <td><?php echo $wind_geschwindigkeit_uebermorgen;?> km/h</td>
+    <td class="text-left"><h4>Windgeschwindigkeit:</h4></td>
+    <td><h4><?php echo $wind_geschwindigkeit_heute;?> km/h</h4></td>
+    <td><h4><?php echo $wind_geschwindigkeit_morgen;?> km/h</h4></td>
+    <td><h4><?php echo $wind_geschwindigkeit_uebermorgen;?> km/h</h4></td>
     </tr>
 
 

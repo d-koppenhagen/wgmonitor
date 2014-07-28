@@ -103,3 +103,20 @@ body{
 	margin-left: 20px;
 	color:#FFFFFF;
 	}
+	
+	
+<!--Style for Atom Feed parser-->
+.feedEkList{
+	list-style:none outside none;
+}
+
+.feedEkList img{
+	max-width: 250px;
+}
+
+#divRss > div > div:nth-child(n) > div.panel-body > div:nth-child(5) > a:nth-child(n+1) > img{
+	visibility:hidden;
+}
+
+
+<!--End: Style for Atom Feed parser-->

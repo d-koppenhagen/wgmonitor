@@ -7,7 +7,9 @@
 require_once("Config.class.php");
 Config::init(); echo Config::$pref['refreshplan'] * 1000 ?>);
 </script>
-<div class="row" id="content"></div>
+<div class="row" id="content">
+	<h4 class="text-center">...loading, please Wait...</h4>
+</div>
 <div class="row">
 <div class="col-md-12">
 <div class="btn-group btn-group-justified">
