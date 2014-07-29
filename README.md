@@ -8,7 +8,7 @@ this is a simple touchscreen interfaece with some nice features:
 * Guestbook
 
 ## Preview
-* project cloned on: http://1111101.eu/wgmonitor/
+* project cloned on: http://1111101.eu/
 * preview images of the touchscreen:
       * http://doerki.com/img/infoscreen/pic01.JPG
       * http://doerki.com/img/infoscreen/pic02.JPG
