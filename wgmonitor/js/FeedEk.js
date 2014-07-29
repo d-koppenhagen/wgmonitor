@@ -32,7 +32,7 @@
                     
 					// s += '<div class="well"><h4><a href="' + item.link + '" target="' + def.TitleLinkTarget + '" >' + item.title + "</a></h4>";
 					s += '	<div class="panel panel-default">';
-					s += '<div class="panel-heading"><div class="row"><div class="col-md-10"><h4>' + item.title + '"</h4></div><div class="col-md-2">';
+					s += '<div class="panel-heading"><div class="row"><div class="col-md-10"><h4>' + item.title + '</h4></div><div class="col-md-2">';
 					
 					if (def.ShowPubDate) {
                         dt = new Date(item.publishedDate);
