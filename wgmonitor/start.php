@@ -1,8 +1,12 @@
 <?php require_once("common/wlanConfig.php"); Config::init(); ?>
 
-<h2>WG-Monitor "Ronny" heißt euch herzlich Willkommen!</h2>
+<h3>Herzlich Willkommen in der WG von Mario und Danny!</h3>
+<hr>
+<h4>Aktuelle Informationen:</h4>
 <div class="row">
   <div class="col-md-12">
+	<ul><li>Jetzt auch aus dem Web erreichbar unter: 1111101.eu</li></ul>
+    
     <div class="well well-sm">
       <ul class="list-inline">
         <li>
@@ -18,8 +22,11 @@
         </li>
       </ul>
     </div>
+    
   </div>
 </div>
+<hr>
+
 <!--<h3>Kommende Veranstaltungen:</h3>
  row 1 
 <div class="row">
@@ -32,7 +39,8 @@
   </div>
 </div>-->
 
-<h3>Funktionen und Tools</h3>
+
+<h3>Tools</h3>
 <div class="row">
   <div class="col-md-3">
   <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span><br>Postillon News</button>
@@ -44,7 +52,7 @@
 
 	</div>
 </div>
-
+<hr>
 <!-- End: row 1 -->
 
 
