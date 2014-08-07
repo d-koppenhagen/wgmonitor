@@ -16,6 +16,8 @@
 <!-- Load Script for Webcam-->
 <script src="../script.js"></script>
 
+
+
 <!-- refresh Temp and Time-->
 <script>
 (function($){
@@ -141,3 +143,9 @@ function closeWindow(){
 }
 </script>
 <!-- end script -->
+
+
+
+
+
+

@@ -33,8 +33,7 @@
 
   <!-- Begin Dateien auslsen -->
   <?php
-  
- 
+
 $dir = './gallery';
 
 $dirlist = getFileList($dir);
