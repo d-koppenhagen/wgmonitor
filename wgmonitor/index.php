@@ -2,10 +2,11 @@
 <html id="scrollbar" lang="de">
 <head>
 <?php require "head.html"; ?>
+
 </head>
 
 <body>
-<?php require_once ("menu.php");?>
+<?php require_once ("menu.html");?>
 <div  class="container-fluid">
 <div class="row">
 <div class="col-md-8"> 
@@ -84,12 +85,6 @@
 </script> 
 
 <script src="js/jsKeyboard.js"></script> 
-
-<!-- AngularJS -->
-<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>-->
-
-
 
 <!-- Blueimp Gallery -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script> 

@@ -11,7 +11,7 @@ if($get == "temp"){
 
 	$temp = round($temp, 1); //one digit after separator
 	$temp = str_replace(".", ",", $temp); //comma as separator
-	$temp .= "&deg;C"; //add ¡C
+	$temp .= "&deg;C"; //add Degree Sign
 	
 	echo $temp;
 }
