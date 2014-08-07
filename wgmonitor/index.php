@@ -97,6 +97,9 @@
 <script type="text/javascript" src="js/postillonFeed.js"></script>
 <script type="text/javascript" src="js/jingleFeed.js"></script>
 
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 </div>
 </body>
 </html>
