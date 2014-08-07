@@ -25,8 +25,9 @@
 </div>
 </div>
 
+
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery"> 
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
   <!-- The container for the modal slides -->
   <div class="slides"></div>
   <!-- Controls for the borderless lightbox -->
@@ -45,14 +46,27 @@
         <div class="modal-body next"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left prev"> <i class="glyphicon glyphicon-chevron-left"></i> Previous </button>
-          <button type="button" class="btn btn-default" onclick="jQuery.event.trigger({ type : 'keypress', which : '39' });"> Slideshow <i class="glyphicon glyphicon-play-circle"></i> </button>
-          <button type="button" class="btn btn-primary next" id="#nextPicture"> Next <i class="glyphicon glyphicon-chevron-right"></i> </button>
+          <button type="button" class="btn btn-default play-pause" id="StartSlideshow" onclick="$('#StartSlideshow').toggleClass('active');"> Slideshow <i class="glyphicon glyphicon-play-circle"></i> </button>
+          <button type="button" class="btn btn-primary next"> Next <i class="glyphicon glyphicon-chevron-right"></i> </button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+        container: '#blueimp-gallery-carousel',
+        slideshowInterval: 50,
+        carousel: true
+
+    }
+);
+</script>
 <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body --> 
+
 
 <!-- Container for Virtual Keyboard -->
 <div id="virtualKeyboard"></div>
@@ -82,6 +96,7 @@
                 isCleaned = true;
             }
         }
+
 </script> 
 
 <script src="js/jsKeyboard.js"></script> 
