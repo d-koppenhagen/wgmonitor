@@ -3,14 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <!-- Bootstrap Layout -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="css/jsKeyboard.css" type="text/css">
 <link rel="stylesheet" href="media/style.css" type="text/css">
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="media/bootstrap-image-gallery.min.css">
 <link rel="stylesheet" href="media/lvb.css" type="text/css">
 
+<!-- jQuery -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <!-- Load Script for Webcam-->
@@ -34,18 +35,18 @@
                 $('#loading').hide();
             }
         });
-        
-        
+
+
 		//temperature refresh
         $("#temp").load("metadata.php?get=temp");
         var tempRefreshId = setInterval(function(){
             $("#temp").load("metadata.php?get=temp");
         }, <?php echo Config::$pref['refreshtemp'] * 1000 ?>);
-        
-        
+
+
         loadnews();
         showTime();
-        
+
     });
 })(jQuery);
 </script>
@@ -59,10 +60,8 @@ function loadnews(){
 		fadeinout($('#news_content li:first'));
 	});
 }
-</script>
 
-<script>
-//function for fading news elements      
+//function for fading news elements
 function fadeinout(e){
 	e.delay().fadeIn().delay(<?php echo Config::$pref['refreshnews'] * 1000 ?>).fadeOut(function(){
 		if(e.next().length > 0){
@@ -70,24 +69,24 @@ function fadeinout(e){
 		}else{
 			loadnews();
 		}
-	});	
+	});
 }
 </script>
+
 <script>
 //show system time
 function showTime(){
 	var date=new Date();
 	var h = date.getHours();
 	var m = date.getMinutes();
-	
+
 	//always show two digits
 	h = checkTime(h);
 	m = checkTime(m);
 	$("#curTime").text(h + ":" + m);
 	t = setTimeout('showTime()',1000);
 }
-</script>
-<script>
+
 //helper function: add 0 so that there are always two digits
 function checkTime(i){
 	if(i < 10){
@@ -95,11 +94,9 @@ function checkTime(i){
 	}
 	return i;
 }
-
 </script>
 
-
-<!-- Script to disable to mark text -->
+<!-- Script to disable mark-text -->
 <script>
 function disableselect(e){
 return false
@@ -130,10 +127,11 @@ function closeWindow(){
 $(document).ready(function(){
   setInterval(function(){
     $('#sidebarRefresh').load('sidebar.php');
-  },1800000);
+  },1800000); //refresh every 30 Minutes
 });
 </script>
 <!-- End Script -->
+<<<<<<< HEAD:wgmonitor/head.php
 
 <!-- Script to close the Window -->
 <script>
@@ -149,3 +147,5 @@ function closeWindow(){
 
 
 
+=======
+>>>>>>> 1d10d947f57253528e03fb5af0b9ed5936cb92a3:wgmonitor/head.html

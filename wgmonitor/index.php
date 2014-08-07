@@ -1,7 +1,7 @@
 <?php require_once("Config.class.php"); Config::init(); ?>
 <html id="scrollbar" lang="de">
 <head>
-<?php require "head.php";  ?>
+<?php require "head.html"; ?>
 </head>
 
 <body>
@@ -82,11 +82,23 @@
             }
         }
 </script> 
+
 <script src="js/jsKeyboard.js"></script> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+
+<!-- AngularJS -->
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>-->
+
+
+
+<!-- Blueimp Gallery -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script> 
-<script src="js/bootstrap-image-gallery.min.js"></script> 
-<script type="text/javascript" src="js/FeedEk.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+
+<!-- Feeds -->
+<script type="text/javascript" src="js/postillonFeed.js"></script>
+<script type="text/javascript" src="js/jingleFeed.js"></script>
+
 </div>
 </body>
 </html>

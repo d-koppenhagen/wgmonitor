@@ -1,5 +1,4 @@
 <?php
-
 class Config{
 	public static $pref;
 	//Konfiguration
@@ -29,5 +28,4 @@ class Config{
 		}
 	}
 }
-
 ?>

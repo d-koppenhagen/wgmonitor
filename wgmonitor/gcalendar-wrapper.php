@@ -335,3 +335,4 @@ if (preg_match("/$calSettingsPattern/", $calCustomized, $matches)) {
 
 header('Content-type: text/html');
 print $calCustomized;
+?>
