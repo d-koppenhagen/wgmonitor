@@ -44,12 +44,14 @@
 <div class="row">
   <div class="col-md-3">
   <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span><br>Postillon News</button>
+  </div>
    <!--<button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( '../index.php' );" style="width:100%"><span class="glyphicon glyphicon-facetime-video"></span><br>Webcam</button>
  
  --> 
 <!--	<button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'buy.php' );" style="width:100%"><span class="glyphicon glyphicon-th-list"></span><br>Einkaufsliste</button>
   -->
-
+    <div class="col-md-3">
+    <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'jingles.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span><br>Fritz Jingles</button>
 	</div>
 </div>
 <hr>

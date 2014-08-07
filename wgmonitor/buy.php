@@ -1,5 +1,4 @@
  <span class="help-block"></span>
- 				
 
 <div class="content">
   <form action="" method="POST"  class="form-inline" role="form">

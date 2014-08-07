@@ -1,0 +1,22 @@
+<h3>Aktuelle Jingles</h3>
+<!-- row 2-->
+<div class="row">
+  <div class="col-md-12">
+	<div id="jingleDiv"></div>
+	<script type="text/javascript">
+    	$(document).ready(function () {
+        $('#jingleDiv').jingleFeed({
+            FeedUrl: 'http://www.fritz.de/media/jingles/klassiker.feed.rss.xml', // Feed URL
+            MaxCount: 50, // number of entrys
+            ShowPubDate: true, //show date?
+			DateFormat: 'DD.MM.YYYY - HH:mm', //time and Date format
+			DateFormatLang: 'de', //en, de, etc.
+			TitleLinkTarget:'_blank', // also _self, etc.
+        });
+    });
+	</script>
+  </div>
+</div>
+<!-- End: row 2-->
+
+

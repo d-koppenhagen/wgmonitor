@@ -53,27 +53,6 @@ foreach ($listitem as $item) {
 
 ';
 }
-
-
-
-/*<div class="panel panel-default">
-  <div class="panel-heading">
-  	<div class="row">
-		<div class="col-md-9">
-    		<h2 class="panel-title">'.$item->name .'</h2>
-		</div>
-		<div class="col-md-3 text-right">
-			am ' .date('d.m.Y', strtotime($item->timestamp)) .'
-			um ' .date('H:i', strtotime($item->timestamp)) .'
-		</div>
-	</div>
-  </div>
-  <div class="panel-body">
-    ' .$item->text .'
-  </div>
-</div>*/
-
-
 ?>
 
 
