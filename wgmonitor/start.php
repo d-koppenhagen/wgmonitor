@@ -27,46 +27,30 @@
 </div>
 <hr>
 
-<!--<h3>Kommende Veranstaltungen:</h3>
- row 1 
-<div class="row">
-  <div class="col-md-12">
-    <ul>
-      <li>
-        <h4>21. Juli: Semesterabschluss-Besäufniss</h4>
-      </li>
-    </ul>
-  </div>
-</div>-->
-
-
 <h3>Tools</h3>
 <div class="row">
   <div class="col-md-3">
   <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span><br>Postillon News</button>
   </div>
-<<<<<<< HEAD
+
   
   <!--<div class="col-md-3">
   <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'test.php' );" style="width:100%"><span class="glyphicon glyphicon-picture"></span> <span class="glyphicon glyphicon-pencil"></span><br>Ein Bild malen</button>
   </div>-->
-  
-  
-=======
->>>>>>> 1d10d947f57253528e03fb5af0b9ed5936cb92a3
+
    <!--<button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( '../index.php' );" style="width:100%"><span class="glyphicon glyphicon-facetime-video"></span><br>Webcam</button>
  
  --> 
 <!--	<button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'buy.php' );" style="width:100%"><span class="glyphicon glyphicon-th-list"></span><br>Einkaufsliste</button>
   -->
-<<<<<<< HEAD
 
 
-=======
+
+
     <div class="col-md-3">
     <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'jingles.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span><br>Fritz Jingles</button>
 	</div>
->>>>>>> 1d10d947f57253528e03fb5af0b9ed5936cb92a3
+
 </div>
 <hr>
 <!-- End: row 1 -->
