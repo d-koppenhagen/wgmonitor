@@ -53,18 +53,6 @@
     </div>
   </div>
 </div>
-
-<script>
-blueimp.Gallery(
-    document.getElementById('links').getElementsByTagName('a'),
-    {
-        container: '#blueimp-gallery-carousel',
-        slideshowInterval: 50,
-        carousel: true
-
-    }
-);
-</script>
 <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body --> 
 
 
