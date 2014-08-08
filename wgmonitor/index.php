@@ -89,16 +89,18 @@
 
 <script src="js/jsKeyboard.js"></script> 
 
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <!-- Blueimp Gallery -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script> 
 <script src="js/bootstrap-image-gallery.min.js"></script>
 
-<!-- Feeds -->
+<!-- Feeds (must be loaded after jQuery -->
 <script type="text/javascript" src="js/postillonFeed.js"></script>
 <script type="text/javascript" src="js/jingleFeed.js"></script>
 
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 
 </div>
 </body>
