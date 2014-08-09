@@ -29,7 +29,8 @@
     </div>
   </div>
 </div>
-  	<span class="help-block help-block-start"></span>
+
+<div class="container-fluid" id="gallerythumbs">
 
   <!-- Begin Dateien auslsen -->
   <?php
@@ -79,6 +80,9 @@ function getFileList($directory)
   
 ?>
   <!-- end Dateien auslesen --> 
+
+</div>
+
 <script type="text/javascript" src="js/qrcode.js"></script> 
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
