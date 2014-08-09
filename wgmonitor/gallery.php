@@ -31,11 +31,11 @@
 </div>
 
 <div class="container-fluid" id="gallerythumbs">
-
+<div class="row">
   <!-- Begin Dateien auslsen -->
   <?php
 
-$dir = './gallery';
+$dir = 'gallery';
 
 $dirlist = getFileList($dir);
 
@@ -56,9 +56,9 @@ function getFileList($directory)
 		   			echo '
   		            <div class="col-xs-12 col-md-4 col-lg-3" id="image'.$datei.'">
   		                <a href="'.$data.'" data-gallery class="thumbnail">
-							<div class="well well-lg">
-								<img src="'.$thumb.'" style="max-width:100%;" class="center-block">
-							</div>
+                          <div class="well well-lg">
+							<img data-src="'.$thumb.'" src="'.$thumb.'" class="img-responsive" >
+                          </div>
     					</a>
 					</div>
     		        ';
@@ -80,7 +80,7 @@ function getFileList($directory)
   
 ?>
   <!-- end Dateien auslesen --> 
-
+    </div>
 </div>
 
 <script type="text/javascript" src="js/qrcode.js"></script> 

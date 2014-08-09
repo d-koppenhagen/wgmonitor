@@ -16,10 +16,15 @@ body{
 	font-size: 20px;
 }
 
-#gallerythumbs .well{
-    height: 170px;
+#gallerythumbs .img-responsive{
+    max-height: 130px;
+    align-content: center;
 }
 
+#gallerythumbs .well{
+    height: 180px;
+    overflow: hidden;
+}
 
  /* ------------------------------------------------------------ SCROLLBAR
 */
