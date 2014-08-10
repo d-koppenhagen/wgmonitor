@@ -2,6 +2,7 @@
 /* CSS Document */
 html{
 	overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 body{
@@ -28,6 +29,11 @@ h4{
 #gallerythumbs .well{
     height: 150px;
     overflow: hidden;
+}
+
+#StartOpenCamera{
+   display: none;
+    visibility: hidden;
 }
 
  /* ---------------- SCROLLBAR --------------------------------------------  */

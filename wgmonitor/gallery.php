@@ -30,8 +30,10 @@
 <div class="row">
   <!-- Begin Dateien auslsen -->
   <?php
-//$dir = 'file://sdcard/htdocs/wgmonitor/gallery';
+//$dir = 'file://sdcard/DCIM/Camera';
 $dir = 'gallery';
+//$dir = '../../DCIM/Camera';
+
 
 $dirlist = getFileList($dir);
 
