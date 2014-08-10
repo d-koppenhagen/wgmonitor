@@ -1,5 +1,5 @@
 <?php require_once("Config.class.php"); Config::init(); ?>
-<html id="scrollbar" lang="de">
+<html lang="de"> <!--id="scrollbar" -->
 <head>
 <?php require "head.html"; ?>
 
@@ -87,7 +87,7 @@
 
 </script> 
 
-<script src="js/jsKeyboard.js"></script> 
+<!--<script src="js/jsKeyboard.js"></script> -->
 
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
