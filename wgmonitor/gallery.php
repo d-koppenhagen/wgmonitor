@@ -4,18 +4,14 @@
   	<h1>Gallerie</h1>
     <h4>Bilder auf deinem Mobilgerät abrufen:</h4>
 		<ol>
-        	<li>
-            	<ul class="list-inline">
-                	<li>Logge dich im WLAN ein:</li>
-                    <li> </li>
-            		<li>WLAN-Name (SSID): "<?php echo Config::$pref['wlanssid'] ?>"</li>
-                    <li> - </li>
+        	<li>Logge dich im WLAN ein:
+                <ul>
+                    <li>WLAN-Name (SSID): "<?php echo Config::$pref['wlanssid'] ?>"</li>
                     <li>Kennwort: "<?php echo Config::$pref['wlankey'] ?>"</li>
-      			</ul>
-            </li>
+                </ul>
             <li>Scanne den QR Code mit deinem Mobilgerät </li>
       		<ul>
-            	<li>Alternativ kannst du auch im Browser die folgende Seite aufrufen: http://10.0.1.100/wgmonitor/gallery </li>
+            	<li>Alternativ kannst du auch im Browser die folgende Seite aufrufen: http://10.0.1.12/wgmonitor/gallery </li>
             </ul>
     	</ol>
   </div>
@@ -34,7 +30,7 @@
 <div class="row">
   <!-- Begin Dateien auslsen -->
   <?php
-
+//$dir = 'file://sdcard/htdocs/wgmonitor/gallery';
 $dir = 'gallery';
 
 $dirlist = getFileList($dir);
@@ -51,7 +47,7 @@ function getFileList($directory)
 				$data=$directory.'/'.$datei;
 				
 				$extensioncheck=pathinfo($datei);
-				if (strtolower($extensioncheck['extension'])==("jpg")) {
+				if (strtolower($extensioncheck['extension'])==("jpg") && (substr($datei, 0, 1) != ".")) {
 					$thumb=$directory.'/thumbs/'.$datei;
 		   			echo '
   		            <div class="col-xs-12 col-md-4 col-lg-3" id="image'.$datei.'">
@@ -91,7 +87,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 
 function makeCode () {
-	var elText = "http://10.0.1.100/wgmonitor/gallery/";
+	var elText = "http://10.0.1.12/wgmonitor/gallery/";
 	qrcode.makeCode(elText);
 }
 makeCode();
