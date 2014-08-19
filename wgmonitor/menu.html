@@ -15,20 +15,22 @@
                 <li id="Bilder">
                     <a onClick="$( '#contentLeftColumn' ).load( 'gallery.php' );"> <span class="glyphicon glyphicon-camera"></span> Bilder</a>
                 </li>
-                <!--<li id="Einkaufsliste"><a onClick="$( '#contentLeftColumn' ).load( 'buy.php' );"> <span class="glyphicon glyphicon-shopping-cart"></span> Einkaufsliste </a></li>
-          <li id="Chefkoch"><a onClick="$( '#contentLeftColumn' ).load( 'chefkoch.php' );"> <span class="glyphicon glyphicon-cutlery"></span> Chefkoch </a></li>-->
+                <li id="Einkaufsliste">
+                    <a onClick="$( '#contentLeftColumn' ).load( 'buy.html' );"> <span class="glyphicon glyphicon-shopping-cart"></span> Einkaufsliste</a>
+                </li>
+
 
                 <li id="Guestbook">
                     <a onClick="$( '#contentLeftColumn' ).load( 'guestbook.php' );"> <span class="glyphicon glyphicon-comment"></span> Gästebuch</a>
                 </li>
 
-                <!--<li id="test"><a onClick="$( '#contentLeftColumn' ).load( 'test.php' );"> Test </a></li>-->
             </ul>
             <p class="navbar-text"><small>WG Monitor Version 0.8.2</small>
             </p>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Aktuelle Temperatur: <span id="temp"></span></a></li>
-                <!--<li><a><span id="curTime"></span> Uhr</a></li>-->
+                <li><a>Aktuelle Temperatur: <span id="temp"></span></a>
+                </li>
+                <li><a><span class="glyphicon glyphicon-time"></span> <span id="curTime"></span> Uhr</a></li>
             </ul>
         </div>
     </div>

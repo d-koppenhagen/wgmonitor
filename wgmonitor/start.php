@@ -36,7 +36,7 @@
             <br>Postillon News</button>
     </div>
     <div class="col-md-3">
-        <input id="StartOpenCamera" type="file" accept="image/*" capture="camera" style="width:100%" />
+        <input id="StartOpenCamera" type="file" accept="image/*" capture="camera" style="width:100%"  class="hidden" />
         <button class="btn btn-default btn-lg center-block" id="#choosePicture" style="width:100%" onclick="$('#StartOpenCamera').click();">
             <span class="glyphicon glyphicon-camera"></span>
             <br>Ein Foto machen

@@ -14,6 +14,7 @@
             	<li>Alternativ kannst du auch im Browser die folgende Seite aufrufen: http://10.0.1.12/wgmonitor/gallery </li>
             </ul>
     	</ol>
+      <p><span class="glyphicon glyphicon-fullscreen"></span> Um ein Bild in Groß anzusehen, tippe bitte auf das Miniaturbild</p>
   </div>
   <div class="col-md-3">
   	<span class="help-block help-block-start"></span>

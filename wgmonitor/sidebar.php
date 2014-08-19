@@ -149,7 +149,7 @@
 
 
   <tr>
-    <th></th>
+    <th><h3>Wetter</h3></th>
     <th><h4>heute <?php echo $datum_heute; ?></h4></th>
     <th><h4>heute++ <?php echo $datum_morgen; ?></h4></th>
     <th><h4>heute+2 <?php echo $datum_uebermorgen; ?></h4></th>
@@ -179,10 +179,10 @@
     <td><img src="img/icons/n_<?php echo $wetter_uebermorgen_nacht; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_nacht_txt;?>" /></td>
     </tr>
   <tr>
-    <td class="text-left"><h4>Temperatur:</h4></td>
-    <td><h4><span class="temp_min"><?php echo $tmin_heute; ?>°C</span> | <span class="temp_max"><?php echo $tmax_heute; ?>°C</span></h4></td>
-    <td><h4><span class="temp_min"><?php echo $tmin_morgen; ?>°C</span> | <span class="temp_max"><?php echo $tmax_morgen; ?>°C</span></h4></td>
-    <td><h4><span class="temp_min"><?php echo $tmin_uebermorgen; ?>°C</span> | <span class="temp_max"><?php echo $tmax_uebermorgen; ?>°C</span></h4></td>
+    <td class="text-left"><h4>Temperatur:</h4><small>(min/max in °C)</small></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_heute; ?></span> | <span class="temp_max"><?php echo $tmax_heute; ?></span></h4></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_morgen; ?></span> | <span class="temp_max"><?php echo $tmax_morgen; ?></span></h4></td>
+    <td><h4><span class="temp_min"><?php echo $tmin_uebermorgen; ?></span> | <span class="temp_max"><?php echo $tmax_uebermorgen; ?></span></h4></td>
     </tr>
   <tr>
     <td class="text-left"><h4>Niederschlagsrisiko:</h4></td>

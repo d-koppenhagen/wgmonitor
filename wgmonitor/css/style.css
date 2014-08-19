@@ -12,6 +12,16 @@ body{
     /*font-size: 16px;*/
 }
 
+small{
+    font-size: 10px;
+}
+
+
+.hidden{
+	display:none;
+    visibility: hidden;
+}
+
 h4{
     font-size: 15px;
 }
@@ -31,10 +41,6 @@ h4{
     overflow: hidden;
 }
 
-#StartOpenCamera{
-   display: none;
-    visibility: hidden;
-}
 
  /* ---------------- SCROLLBAR --------------------------------------------  */
 /* Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
