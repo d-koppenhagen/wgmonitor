@@ -89,14 +89,14 @@ define('GOOGLE_CALENDAR_EMBED_URL', GOOGLE_CALENDAR_BASE . 'calendar/embed');
 $calCustomStyle =<<<EOT
 
 body {
-	color: {$calColorTxtHeader} !important; 
+	color: {$calColorTxtHeader} !important;
 	background:none !important;
-	
+
 	/* background-color: {$calColorBg} !important;*/
 }
 
 .calendar-container {
-	
+
 }
 
 /* misc interface */
@@ -157,7 +157,7 @@ table.mv-daynames-table {
 	/* days of the week */
 	color: {$calColorTextOnDark} !important;
 	font-size: 14px !important;
-	
+
 }
 td.st-bg,
 td.st-dtitle {

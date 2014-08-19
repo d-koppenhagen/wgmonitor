@@ -4,7 +4,7 @@
 	require("dbConfig.php");
 	// Wurde das Formular abgesendet
 	//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			
+
 	// Überprüfen, ob alle Felder korrekt ausgefüllt wurden
     // und ggf. fehlende Daten an JavaScript zurückgeben (auf Reihenfolge achten)
     if($_POST[name] == ''){exit ("name");}
@@ -20,12 +20,12 @@
                                    SET
                                     `name` = :name,
                                     `text` = :nachricht");*/
-									
+
 			// escape variables for security
 			//$firstname = mysqli_real_escape_string($VERBINDUNG, $_POST['name']);
 			//$lastname = mysqli_real_escape_string($VERBINDUNG, $_POST['nachricht']);
-			
-				
+
+
 			$sql="INSERT INTO `wg`.`guestbook` (`id`, `name`, `text`, `timestamp`) VALUES (NULL, '".$name."', '".$nachricht."', CURRENT_TIMESTAMP);";
 
 			$kommando = $VERBINDUNG->prepare($sql);
@@ -39,7 +39,7 @@
  			if ($kommando->execute()) {
   				echo '';
  			}
-							
+
  			// $var->bindParam() bindet einen Parameter an den angegebenen Variablennamen
  			// (die Platzhalter werden mit den POST-Variablen ersetzt).
  			//$kommando->bindParam(':name', $_POST["name"]);
@@ -47,7 +47,7 @@
 
  			// $var->execute() führt die vorbereitete Anweisung aus
  			//$kommando->execute();
-  			
-	    echo "success";	
+
+	    echo "success";
 
 ?>

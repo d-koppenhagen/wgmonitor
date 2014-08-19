@@ -14,8 +14,8 @@ class Config{
 			"refreshnews" => 15, // refresh time of news in sec
 		);
 	}
-	
-	
+
+
 	//Aufruf des Templates
 	public static function getTemplate($tpl){
 		$tplpath = "templates/";

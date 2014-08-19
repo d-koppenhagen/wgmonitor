@@ -1,7 +1,7 @@
 <h2>Verwaltung des Infoscreens</h2>
 <hr>
 <h3>LVB-Anzeige:</h3>
-<div class="row">  
+<div class="row">
    <div class="col-lg-3">
     <p>Anzahl der Verbindungen:</p>
   </div><!-- /.col-lg-6 -->

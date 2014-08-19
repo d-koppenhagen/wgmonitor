@@ -5,7 +5,7 @@ class Config{
 	//Konfiguration
 	public static function init(){
 		self::$pref = array(
-			/* WLAN for Guests*/			
+			/* WLAN for Guests*/
 			"wlanssid" => "WLANNAME",
 			"wlankey" => "WLANKEY",
 		);

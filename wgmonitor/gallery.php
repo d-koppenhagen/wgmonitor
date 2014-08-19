@@ -1,5 +1,5 @@
 <?php require_once("common/wlanConfig.php"); Config::init(); ?>
-<div class="row">   
+<div class="row">
   <div class="col-md-9">
   	<h1>Gallerie</h1>
     <h4>Bilder auf deinem Mobilgerät abrufen:</h4>
@@ -41,13 +41,13 @@ $dirlist = getFileList($dir);
 function getFileList($directory)
   {
 		$alledateien = scandir($directory); //Ordner "medien" auslesen
-		
+
 		if(is_dir($directory)){	//check if Path exists
 			foreach ($alledateien as $datei) { // Ausgabeschleife
 			// scandir liest alle Dateien im Ordner aus, zusätzlich noch "." , ".." als Ordner
-				
+
 				$data=$directory.'/'.$datei;
-				
+
 				$extensioncheck=pathinfo($datei);
 				if (strtolower($extensioncheck['extension'])==("jpg") && (substr($datei, 0, 1) != ".")) {
 					$thumb=$directory.'/thumbs/'.$datei;
@@ -75,13 +75,13 @@ function getFileList($directory)
 		};
 
   }
-  
+
 ?>
-  <!-- end Dateien auslesen --> 
+  <!-- end Dateien auslesen -->
     </div>
 </div>
 
-<script type="text/javascript" src="js/qrcode.js"></script> 
+<script type="text/javascript" src="js/qrcode.js"></script>
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	width : 150,

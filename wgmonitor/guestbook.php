@@ -1,5 +1,5 @@
  <span class="help-block"></span>
- 
+
  <form  role="form" method="post" id="gbform" class="form-horizontal" >
     <div class="row">
       <div class="col-xs-10">
@@ -20,9 +20,9 @@
         <button class="webform btn btn-primary btn-block btn-lg" type="submit" id="btnSuccess" style="height:152px;"><span class="glyphicon glyphicon-plus"></span><br><br>Eintrag<br>hinzufügen</span></button>
       </div>
     </div>
-    
+
   </form>
-	
+
 <hr>
 <div class="row">
   <div class="col-md-12">
@@ -49,7 +49,7 @@ foreach ($listitem as $item) {
 		</div>
 	</div>
  </div>
- 
+
 
 ';
 }
@@ -75,21 +75,21 @@ foreach ($listitem as $item) {
 			    	// Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
 					var data  = 'name=' + name.val() + '&nachricht='  + encodeURIComponent(nachricht.val());
 
-			    	// Die Formularelemente deaktivieren und dem Benutzer 
+			    	// Die Formularelemente deaktivieren und dem Benutzer
 			    	// anzeigen, dass das Formular versendet wird
 			    	$("#gbform .webform").prop("disabled", true);
 			    	// Die Anfrage an das PHP-Skript abschicken
 
 			    	$.ajax({
-						
+
 			        	url: "common/gbentry.php", // Der Pfad des PHP-Skriptes
-			        	type: "POST",        
+			        	type: "POST",
 			        	data: data,
                         success: function (answer) {
 								//alert(answer);
-								
+
 								$("#gbform .webform").prop("disabled", false);
-                          		if(answer == "success"){ // Nachricht wurde erfolgreich verschickt								
+                          		if(answer == "success"){ // Nachricht wurde erfolgreich verschickt
                            				// Die Eingabefelder leeren
 										//alert("Success kommt zurück");
                           				$("#gbform input, #gbform textarea").val("");
@@ -103,7 +103,7 @@ foreach ($listitem as $item) {
                         				$("#" + answer).parent().addClass("has-error").addClass("has-feedback");
                         		}
                 		}
-            		});						
+            		});
 			    	// Eigentliches Abschicken des Formulars verhindern,
 			    	// damit die Seite nicht neu lädt
 			    	return false;

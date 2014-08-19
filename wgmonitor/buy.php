@@ -17,14 +17,14 @@
   <span class="help-block"> </div>
 <div class="content">
   <?php
-	
+
 	require_once("common/dbConfig.php");
 	// Wurde das Formular abgesendet
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	
+
 
 		if (isset($_POST['insert_button'])){
-  			
+
 
  			// Nachricht eintragen
  			// $var->prepare() bereitet die Anweisung für die Ausführung vor.
@@ -44,15 +44,15 @@
   				echo '';
  			}
 		}
-		
-		
-		if (isset($_POST['delete_button'])) {	
+
+
+		if (isset($_POST['delete_button'])) {
 			$VERBINDUNG->prepare("DELETE FROM shoppingList WHERE BOUGHT = 1")->execute();
-			//$sql->execute();	
+			//$sql->execute();
 			 				echo"<script>javascript: alert('Btn wirft!')</script>";
 
 		}
-	
+
 
 	}
 

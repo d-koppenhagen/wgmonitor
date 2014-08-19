@@ -108,14 +108,14 @@ h4{
 	margin:10px;
 	font-weight:bold;
 	}
-	
+
 	#ck-zutaten, #ck-zubereitung, #ck-footer {
 	font-size:1.1em;
 	margin-left: 20px;
 	color:#FFFFFF;
 	}
-	
-	
+
+
 <!--Style for Atom Feed parser-->
 .feedEkList{
 	list-style:none outside none;

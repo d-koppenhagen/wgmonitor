@@ -9,16 +9,16 @@
 <?php require_once ("menu.html");?>
 <div  class="container-fluid">
 <div class="row">
-<div class="col-md-8"> 
+<div class="col-md-8">
   <!-- the following container will be filled with Ajax after loading...-->
-  <div id="contentLeftColumn"> 
+  <div id="contentLeftColumn">
     <script> //preload after the rest is loading:
 		 	$( document ).ready(function() {
 				$( '#contentLeftColumn' ).load( 'start.php' );
 			});
-         </script> 
+         </script>
   </div>
-  <!-- End of contentLeftColumn --> 
+  <!-- End of contentLeftColumn -->
 </div>
 <div class="col-md-4" id="sidebarRefresh">
 <?php require "sidebar.php";?>
@@ -53,13 +53,13 @@
     </div>
   </div>
 </div>
-<!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body --> 
+<!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <!-- Blueimp Gallery -->
-<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script> 
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
 
 <!-- Feeds (must be loaded after jQuery -->
