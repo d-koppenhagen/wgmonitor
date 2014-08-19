@@ -125,9 +125,7 @@ h4{
 	max-width: 200px;
 }
 
-#divRss > div > div:nth-child(n) > div.panel-body > div:nth-child(5) > a:nth-child(n+1) > img{
-	visibility:hidden;
+#divRss .feedEkList .panel-body a[href *= "http://feeds.feedburner.com/~ff"]{
+    visibility: hidden;
 }
-
-
 <!--End: Style for Atom Feed parser-->

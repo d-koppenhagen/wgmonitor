@@ -43,22 +43,11 @@
         </button>
     </div>
 
-
-    <!--<div class="col-md-3">
-  <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'test.php' );" style="width:100%"><span class="glyphicon glyphicon-picture"></span> <span class="glyphicon glyphicon-pencil"></span><br>Ein Bild malen</button>
-  </div>-->
     <div class="col-md-3">
         <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'buy.html' );" style="width:100%"><span class="glyphicon glyphicon-th-list"></span>
             <br>Einkaufsliste</button>
 
     </div>
-
-
-
-    <!--<div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'jingles.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span>
-            <br>Fritz Jingles</button>
-    </div>-->
 
 </div>
 <hr>
