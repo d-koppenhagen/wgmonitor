@@ -1,5 +1,5 @@
 <?php require_once("Config.class.php"); Config::init(); ?>
-<html lang="de"> <!--id="scrollbar" -->
+<html lang="de" ng-app="todomvc" data-framework="angularjs"> <!--id="scrollbar" -->
 <head>
 <?php require "head.html"; ?>
 
@@ -55,40 +55,6 @@
 </div>
 <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body --> 
 
-
-<!-- Container for Virtual Keyboard -->
-<div id="virtualKeyboard"></div>
-<!-- End: Container for Virtual Keyboard --> 
-
-<script type="text/javascript">
-       $(function () {
-            jsKeyboard.init("virtualKeyboard");
-			jsKeyboard.hide();
-        });
-
-        function focusIt(t) {
-            // define where the cursor is to write character clicked.
-            jsKeyboard.currentElement = $(t);
-            jsKeyboard.show();
-        }
-
-        function showKeyboard(id) {
-            clean($("#" + id));
-            jsKeyboard.currentElement = $("#" + id);
-            jsKeyboard.show();
-        }
-        var isCleaned = false;
-        function clean(t) {
-            if (!isCleaned) {
-                $(t).text("");
-                isCleaned = true;
-            }
-        }
-
-</script> 
-
-<!--<script src="js/jsKeyboard.js"></script> -->
-
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -100,6 +66,13 @@
 <script type="text/javascript" src="js/postillonFeed.js"></script>
 <script type="text/javascript" src="js/jingleFeed.js"></script>
 
+<!-- ShoppingList -->
+<script src="js/buy/app.js"></script>
+<script src="js/buy/controllers/todoCtrl.js"></script>
+<script src="js/buy/services/todoStorage.js"></script>
+<script src="js/buy/directives/todoFocus.js"></script>
+<script src="js/buy/directives/todoBlur.js"></script>
+<script src="js/buy/directives/todoEscape.js"></script>
 
 
 </div>

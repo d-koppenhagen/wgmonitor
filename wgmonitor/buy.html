@@ -1,0 +1,52 @@
+ <h3>Einkaufsliste</h3>
+		<section id="todoapp" ng-controller="TodoCtrl">
+			<header id="header">
+
+				<form id="todo-form" ng-submit="addTodo()" role="form">
+					<input id="new-todo" placeholder="Welches Produkt wird benötigt?" ng-model="newTodo" autofocus class="form-control" >
+				</form>
+			</header>
+			<section id="main" ng-show="todos.length" ng-cloak>
+				<input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul id="todo-list">
+					<li ng-repeat="todo in todos | filter:statusFilter" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+							<input class="toggle" type="checkbox" ng-model="todo.completed">
+							<label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+							<button type="button" class="btn btn-danger destroy" ng-click="removeTodo(todo)"><span class="glyphicon glyphicon-remove"></span></button>
+						</div>
+						<form ng-submit="doneEditing(todo)"  role="form">
+							<input class="form-control edit" ng-model="todo.title" todo-escape="revertEditing(todo)" todo-blur="doneEditing(todo)" todo-focus="todo == editedTodo">
+						</form>
+					</li>
+				</ul>
+			</section>
+			<footer id="footer" ng-show="todos.length" ng-cloak>
+				<span id="todo-count"><strong>{{remainingCount}}</strong>
+					<ng-pluralize count="remainingCount" when="{ one: 'offener Artikel', other: 'offene Artikel' }"></ng-pluralize>
+				</span>
+				<ul id="filters">
+					<li>
+						<a ng-class="{selected: location.path() == '/'} " href="#/">Alle</a>
+					</li>
+					<li>
+						<a ng-class="{selected: location.path() == '/active'}" href="#/active">noch offen</a>
+					</li>
+					<li>
+						<a ng-class="{selected: location.path() == '/completed'}" href="#/completed">Abgehakt</a>
+					</li>
+				</ul>
+				<button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Erledigte Einträge löschen ({{completedCount}})</button>
+			</footer>
+		</section>
+
+		<script src="js/buy/base.js"></script>
+		<script src="js/buy/angular.js"></script>
+		<script src="js/buy/app.js"></script>
+		<script src="js/buy/controllers/todoCtrl.js"></script>
+		<script src="js/buy/services/todoStorage.js"></script>
+		<script src="js/buy/directives/todoFocus.js"></script>
+		<script src="js/buy/directives/todoBlur.js"></script>
+		<script src="js/buy/directives/todoEscape.js"></script>
+

@@ -6,13 +6,13 @@
         <div class="form-group">
         <label for="name"  class="col-sm-2 control-label">Dein Name:</label>
         <div class="col-sm-10">
-        <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann"  name="name" required style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''" />
+        <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann"  name="name" required style="width:100%"  />
       	</div>
         </div>
         <div class="form-group">
         <label for="nachricht"  class="col-sm-2 control-label">Deine Nachricht</label>
         <div class="col-sm-10">
-        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen"  name="nachricht" required  rows="4" style="width:100%" onfocus="jsKeyboard.focus(this);clean(this);placeholder=''"  />
+        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen"  name="nachricht" required  rows="4" style="width:100%"  />
         </div>
         </div>
       </div>
