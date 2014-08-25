@@ -50,7 +50,6 @@
 					s += '</div></div></div>';
 
 					s += '	<div class="panel-body">';
-
                     if (def.ShowDesc) {
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
                             //s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>"
@@ -64,8 +63,10 @@
 
 					    }
                     }
+                    s += '  <video src="'+ item.link +'" type="video/mp4" controls width="480" ></video> ';
+
                     s += '</div>';
-                    s += '<div class="panel-footer"><a href="'+ item.link +'" target="_blank">Zum Video</a></div>';
+                    //s += '<div class="panel-footer"><a href="'+ item.link +'" target="_blank">Zum Video</a></div>';
 					s += '</div>';
                 });
 				$("#" + id).append('<div class="FeedExtra3List">' + s + "</div>")
