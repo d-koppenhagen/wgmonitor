@@ -28,28 +28,11 @@
 </div>
 
 <div class="container-fluid" id="gallerythumbs">
-
-<div class="row">
-    <div class="col-md-3">
-        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="$( '#contentLeftColumn' ).load( 'gallery2.php' );">
-            <span class="glyphicon glyphicon-folder-open"></span>
-            <br>Webcam Bilder
-        </button>
-    </div>
-    <div class="col-md-3">
-        <input id="StartOpenCamera" type="file" accept="image/*" capture="camera" style="width:100%" class="hidden" />
-        <button class="btn btn-default btn-lg center-block" id="#choosePicture" style="width:100%" onclick="$('#StartOpenCamera').click();">
-            <span class="glyphicon glyphicon-camera"></span>
-            <br>Ein Foto machen
-        </button>
-    </div>
-</div>
-<span class="help-block"></span>
 <div class="row">
   <!-- Begin Dateien auslsen -->
   <?php
 //$dir = 'file://sdcard/DCIM/Camera';
-$dir = 'gallery';
+$dir = 'gallery/Camera';
 //$dir = '../../DCIM/Camera';
 
 
@@ -68,12 +51,12 @@ function getFileList($directory)
 
 				$extensioncheck=pathinfo($datei);
 				if (strtolower($extensioncheck['extension'])==("jpg") && (substr($datei, 0, 1) != ".")) {
-					$thumb=$directory.'/thumbs/'.$datei;
+					$thumb='gallery/(125).thumbnails/'.$datei;
 		   			echo '
   		            <div class="col-xs-12 col-md-4 col-lg-3" id="image'.$datei.'">
   		                <a href="'.$data.'" data-gallery class="thumbnail">
                           <div class="well well-lg">
-							<img data-src="'.$thumb.'" src="'.$thumb.'" class="img-responsive" >
+							<img data-src="'.$data.'" src="'.$data.'" class="img-responsive" >
                           </div>
     					</a>
 					</div>
@@ -85,6 +68,17 @@ function getFileList($directory)
 					<div class="col-xs-6 col-md-4 col-lg-3">
 						<button type="button" class="btn btn-primary btn-lg btn-block">
 							<span class="glyphicon glyphicon-folder-open"></span><br>'.$datei.'
+						</button>
+					</div>';
+				};
+
+                if (is_dir($data) && $datei != "." && $datei != ".." && $datei == "Camera") {
+					echo '
+					<div class="col-xs-6 col-md-4 col-lg-3">
+						<button type="button" class="btn btn-primary btn-lg btn-block" onclick="$( "#contentLeftColumn" ).load( "gallery2.php" );" >
+							<span class="glyphicon glyphicon-folder-open"></span>
+                            <br>
+                            Webcam Bilder
 						</button>
 					</div>';
 				};
@@ -109,7 +103,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 
 function makeCode () {
-	var elText = "http://10.0.1.12:8080/gallery/";
+	var elText = "http://10.0.1.12:8080/gallery/Camera/";
 	qrcode.makeCode(elText);
 }
 makeCode();

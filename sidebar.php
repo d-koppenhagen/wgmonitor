@@ -210,6 +210,6 @@
 
  <!-- Start: News-->
 
-<ul id="news_content">...loading...</p>
+<div id="news_content" class="container-fluid">...loading...</div>
 
  <!-- END: News-->

@@ -26,7 +26,7 @@
                 <!-- End of contentLeftColumn -->
             </div>
             <div class="col-md-4" id="sidebarRefresh">
-                <?php require "sidebar.php";?>
+                <?php require_once "sidebar.php";?>
             </div>
         </div>
 
@@ -71,6 +71,7 @@
 
         <!-- Feeds (must be loaded after jQuery -->
         <script type="text/javascript" src="js/postillonFeed.js"></script>
+        <script type="text/javascript" src="js/extra3Feed.js"></script>
 
         <!-- ShoppingList -->
         <script src="js/buy/app.js"></script>

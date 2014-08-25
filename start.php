@@ -36,6 +36,10 @@
             <br>Postillon News</button>
     </div>
     <div class="col-md-3">
+        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'extra3.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span>
+            <br>Extra3</button>
+    </div>
+    <div class="col-md-3">
         <input id="StartOpenCamera" type="file" accept="image/*" capture="camera" style="width:100%"  class="hidden" />
         <button class="btn btn-default btn-lg center-block" id="#choosePicture" style="width:100%" onclick="$('#StartOpenCamera').click();">
             <span class="glyphicon glyphicon-camera"></span>
