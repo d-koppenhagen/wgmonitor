@@ -2,6 +2,9 @@
 <html lang="de" ng-app="todomvc" data-framework="angularjs">
 
 <head>
+    <!-- used to start like an app with google chrome on android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
     <?php require "head.html"; ?>
 
     <!-- using phonegap -->
