@@ -1,0 +1,22 @@
+<h3>Aktuelle 9gag-Posts</h3>
+<!-- row 2-->
+<div class="row">
+  <div class="col-md-12">
+	<div id="divRss"></div>
+	<script type="text/javascript">
+    	$(document).ready(function () {
+        $('#divRss').Feed9gag({
+            FeedUrl: 'http://9gagrss.com/feed', // Feed URL
+            MaxCount: 30, // number of entrys
+			ShowDesc: true, // show / hide description
+            ShowPubDate: true, //show date?
+            //DescCharacterLimit: 1000, // max number of characters (comment out is possible)
+			DateFormat: 'DD.MM.YYYY - HH:mm', //time and Date format
+			DateFormatLang: 'de', //en, de, etc.
+			TitleLinkTarget:'_blank', // also _self, etc.
+        });
+    });
+	</script>
+  </div>
+</div>
+<!-- End: row 2-->

@@ -75,6 +75,7 @@
         <!-- Feeds (must be loaded after jQuery -->
         <script type="text/javascript" src="js/postillonFeed.js"></script>
         <script type="text/javascript" src="js/extra3Feed.js"></script>
+        <script type="text/javascript" src="js/gagFeed.js"></script>
 
         <!-- ShoppingList -->
         <script src="js/buy/app.js"></script>

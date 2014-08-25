@@ -4,12 +4,12 @@
 * Author : Engin KIZIL http://www.enginkizil.com */
 
 (function($) {
-    $.fn.FeedExtra3 = function(opt) {
+    $.fn.Feed9gag = function(opt) {
 
 		// default settings:
         var def = $.extend({
-            FeedUrl: "http://rss.cnn.com/rss/edition.rss",
-            MaxCount: 5,
+            FeedUrl: "http://9gagrss.com/feed",
+            MaxCount: 10,
             ShowDesc: true,
             ShowPubDate: true,
             CharacterLimit: 0,
@@ -54,22 +54,19 @@
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
                             //s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>"
 
-							s += '<p>' + item.content.substr(0, def.DescCharacterLimit) + "...</p>"
+							s += '<p class="text-center">' + item.content.substr(0, def.DescCharacterLimit) + "...</p>"
 
                         } else {
                             //s += '<div class="itemContent">' + item.content + "</div>"
 
-							s += '<p>' + item.content + "</p>"
+							s += '<p class="text-center">' + item.content + "</p>"
 
 					    }
                     }
-                    s += '<p  class="text-center"><video src="'+ item.link +'" type="video/mp4" controls width="640" ></video></p>';
 
-                    s += '</div>';
-                    //s += '<div class="panel-footer"><a href="'+ item.link +'" target="_blank">Zum Video</a></div>';
-					s += '</div>';
+                    s += '</div></div>';
                 });
-				$("#" + id).append('<div class="FeedExtra3List">' + s + "</div>")
+				$("#" + id).append('<div class="Feed9gagList">' + s + "</div>")
                 //$("#" + id).append('<ul class="feedEkList">' + s + "</ul>")
 				//$("#" + id).append('<div class="well well-lg">' + s + "</div>")
             }

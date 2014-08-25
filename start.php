@@ -29,16 +29,8 @@
 </div>
 <hr>
 
-<h3>Tools</h3>
+<h3><span class="glyphicon glyphicon-th-large"></span> Tools</h3>
 <div class="row">
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span>
-            <br>Postillon News</button>
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'extra3.html' );" style="width:100%"><span class="glyphicon glyphicon-bullhorn"></span>
-            <br>Extra3</button>
-    </div>
     <div class="col-md-3">
         <input id="StartOpenCamera" type="file" accept="image/*" capture="camera" style="width:100%"  class="hidden" />
         <button class="btn btn-default btn-lg center-block" id="#choosePicture" style="width:100%" onclick="$('#StartOpenCamera').click();">
@@ -46,19 +38,31 @@
             <br>Ein Foto machen
         </button>
     </div>
-
     <div class="col-md-3">
         <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'buy.html' );" style="width:100%"><span class="glyphicon glyphicon-th-list"></span>
             <br>Einkaufsliste</button>
 
     </div>
-
 </div>
+
 <hr>
-<!-- End: row 1 -->
 
+<h3><span class="glyphicon glyphicon-bullhorn"></span> Satire und Fun</h3>
+<div class="row">
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%">Postillon News</button>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'extra3.html' );" style="width:100%">Extra3</button>
+    </div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( '9gag.html' );" style="width:100%">9gag</button>
+    </div>
+</div>
 
-<h3>Verwaltung</h3>
+<hr>
+
+<h3><span class="glyphicon glyphicon-dashboard"></span> Verwaltung</h3>
 <!-- row 3-->
 <div class="row">
     <div class="col-md-3">
