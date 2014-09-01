@@ -21,9 +21,9 @@ todomvc.controller('TodoCtrl', function TodoCtrl($scope, $location, todoStorage,
 		}
 	}, true);
 
-	if ($location.path() === '') {
+	/*if ($location.path() === '') {
 		$location.path('/');
-	}
+	}*/
 
 	$scope.location = $location;
 

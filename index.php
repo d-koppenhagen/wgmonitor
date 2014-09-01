@@ -1,5 +1,5 @@
 <?php require_once( "Config.class.php"); Config::init(); ?>
-<html lang="de" ng-app="todomvc" data-framework="angularjs">
+<html lang="de">
 
 <head>
     <!-- used to start like an app with google chrome on android -->
@@ -7,13 +7,14 @@
 
     <?php require "head.html"; ?>
 
-    <!-- using phonegap -->
-    <script src="phonegap.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-    <?php require_once ( "menu.html");?>
+    <div id="menubar"></div>
+    <script>
+        $('#menubar').load('menu.html');
+    </script>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -66,25 +67,9 @@
         </div>
         <!-- End of Bootstrap Image Gallery lightbox, should be a child element of the document body -->
 
-
-
         <!-- Blueimp Gallery -->
         <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
         <script src="js/bootstrap-image-gallery.min.js"></script>
-
-        <!-- Feeds (must be loaded after jQuery -->
-        <script type="text/javascript" src="js/postillonFeed.js"></script>
-        <script type="text/javascript" src="js/extra3Feed.js"></script>
-        <script type="text/javascript" src="js/gagFeed.js"></script>
-
-        <!-- ShoppingList -->
-        <script src="js/buy/app.js"></script>
-        <script src="js/buy/controllers/todoCtrl.js"></script>
-        <script src="js/buy/services/todoStorage.js"></script>
-        <script src="js/buy/directives/todoFocus.js"></script>
-        <script src="js/buy/directives/todoBlur.js"></script>
-        <script src="js/buy/directives/todoEscape.js"></script>
-
 
     </div>
 </body>

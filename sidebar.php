@@ -151,8 +151,8 @@
   <tr>
     <th><h3>Wetter</h3></th>
     <th><h4>heute <?php echo $datum_heute; ?></h4></th>
-    <th><h4>heute++ <?php echo $datum_morgen; ?></h4></th>
-    <th><h4>heute+2 <?php echo $datum_uebermorgen; ?></h4></th>
+    <th><h4>morgen <?php echo $datum_morgen; ?></h4></th>
+    <th><h4>übermorgen <?php echo $datum_uebermorgen; ?></h4></th>
     </tr>
   <tr>
     <td class="text-left"><h4>Morgens:</h4></td>

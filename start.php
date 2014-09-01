@@ -47,21 +47,6 @@
 
 <hr>
 
-<h3><span class="glyphicon glyphicon-bullhorn"></span> Satire und Fun</h3>
-<div class="row">
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'postillon.html' );" style="width:100%">Postillon News</button>
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'extra3.html' );" style="width:100%">Extra3</button>
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( '9gag.html' );" style="width:100%">9gag</button>
-    </div>
-</div>
-
-<hr>
-
 <h3><span class="glyphicon glyphicon-dashboard"></span> Verwaltung</h3>
 <!-- row 3-->
 <div class="row">

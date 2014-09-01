@@ -215,5 +215,5 @@
 
 
 	redirect();
-	getFile('learn.json', Learn);
+	//getFile('learn.json', Learn);
 })();
