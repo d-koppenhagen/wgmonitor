@@ -20,12 +20,37 @@
 <!-- /row -->
 
 
-<h3>Farblayout ändern:</h3>
-<button type="button" class="btn btn-primary btn-lg center-block" onclick="
-$( 'html, head').css('background-color','#000037');
 
-$( 'body , .table-striped' ).css('background-color','#000037');
-$( '.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th' ).css('background-color','#004877');
-
-" style="width:100%"><span class="glyphicon glyphicon-cog"></span>
-    <br>Hintergundfarbe ändern</button>
+<h3>Layout ändern:</h3>
+<div class="btn-group">
+<button id="slate_layout_btn" type="button" class="btn btn-primary btn-lg">Slate</button>
+<button id="cyborg_layout_btn" type="button" class="btn btn-primary btn-lg">Cyborg</button>
+<button id="darkly_layout_btn" type="button" class="btn btn-primary btn-lg">Darkly</button>
+<button id="superhero_layout_btn" type="button" class="btn btn-primary btn-lg">Superhero</button>
+<button id="flatly_layout_btn" type="button" class="btn btn-primary btn-lg">Flatly</button>
+<button id="sandstone_layout_btn" type="button" class="btn btn-primary btn-lg">Sandstone</button>
+<button id="yeti_layout_btn" type="button" class="btn btn-primary btn-lg">Yeti</button>
+</div>
+<script>
+    $('#slate_layout_btn').click(function () {
+        swapStyleSheet('css/slate.min.css');
+    });
+    $('#cyborg_layout_btn').click(function () {
+        swapStyleSheet('css/bootstrap.min.css');
+    });
+    $('#darkly_layout_btn').click(function () {
+        swapStyleSheet('css/darkly.min.css');
+    });
+    $('#superhero_layout_btn').click(function () {
+        swapStyleSheet('css/superhero.min.css');
+    });
+    $('#flatly_layout_btn').click(function () {
+        swapStyleSheet('css/flatly.min.css');
+    });
+    $('#sandstone_layout_btn').click(function () {
+        swapStyleSheet('css/sandstone.min.css');
+    });
+    $('#yeti_layout_btn').click(function () {
+        swapStyleSheet('css/yeti.min.css');
+    });
+</script>

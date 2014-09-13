@@ -1,10 +1,10 @@
 <?php
 
-$SERVER = "mysql:host=localhost;
-             dbname=DATABASENAME";
+
+$SERVER = "mysql:host=YOURHOSTNAME;
+             dbname=wg";
 $BENUTZER = "USERNAME"; // Datenbank-User (Benutzername)
 $PASSWORT = "PASSWORD"; // Datenbank-Passwort
-
 
 // Zeichensatz UTF-8 bei der Verbindung setzen
 $OPTION = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -19,3 +19,4 @@ catch (PDOException $e) {
  echo $e->getMessage();
 }
 ?>
+

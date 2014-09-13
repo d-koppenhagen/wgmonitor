@@ -207,9 +207,3 @@
  <!-- END: Wetter.com Script-->
 
 </table>
-
- <!-- Start: News-->
-
-<div id="news_content" class="container-fluid">...loading...</div>
-
- <!-- END: News-->

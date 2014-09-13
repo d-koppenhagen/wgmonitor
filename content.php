@@ -4,8 +4,8 @@ ini_set('display_errors', 1);
 
 header("Content-Type: text/html");
 
-require_once("StationMonitor.class.php");
-require_once("Config.class.php");
+require_once("common/StationMonitor.class.php");
+require_once("common/Config.class.php");
 
 Config::init();
 

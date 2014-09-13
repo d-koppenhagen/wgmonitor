@@ -5,7 +5,7 @@
  		$("#content").load('content.php');
     },
     <?php
-        require_once("Config.class.php");
+        require_once("common/Config.class.php");
         Config::init();
         echo Config::$pref['refreshplan'] * 1000 ;
     ?>
