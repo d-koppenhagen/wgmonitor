@@ -14,14 +14,14 @@ This project is a WebApp for an infoscreen using on a Radxa Rock + Touchscreen.
 - Postillon News (Satire)
 
 ## Configuration ##
-- move the folder 'CommonSample' to 'Common' or just rename it
+- move files from the folder 'Common.example' to 'Common'
 - edit the Config files
 - 'dbConfig.php' :
       * contains the database configuration for using a mysql-databes (guestbook)
-- 'gbentry.php' :
-      * just contains the database selection for the guestbook (nothing to edit)
-- 'wlanConfig.php' :
+
+- copy '/js/wlanconfig.example.js' to '/js/wlanconfig.js' or just rename the file:
       * contains the WLAN name and Password for displaying at the screen
+      * contains ip adress for building the qr code to get access to the image folder
 
 ### Using the image gallery ###
 - just create a new folder wih the name 'gallery'

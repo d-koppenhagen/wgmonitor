@@ -1,10 +1,24 @@
+/* ######## Start: Global configurations ########### */
+var refresh_lvb_plan = Math.floor((Math.random() * 350) + 260) * 1000 ; //random refresh time in s
+var refresh_time = 1800000; //refresh sidebar every 30 Minutes
+
+// lat and lon for current weather
+var lat = "51.3145737"; //latitude
+var lon = "12.37689257"; //longitude
+
+var max_stations = 8;
+
+/* ######## End: Global configurations ########### */
+
 $(document).ready(function(){
-		//temperature refresh
-        $("#temp").load("../common/curTemp.php?get=temp");
-        var tempRefreshId = setInterval(function(){
-            $("#temp").load("../common/curTemp.php?get=temp");
-        }, 500000); //time in ms
+
+        getWeatherData();
         showTime();
+
+        $('#sidebarRefresh').load('sidebar.php');
+        setInterval(function(){
+            $('#sidebarRefresh').load('sidebar.php');
+        },refresh_time);
 });
 
 //show system time
@@ -44,4 +58,17 @@ document.onselectstart = new Function ("return false")
 // swaping stylesheets
 function swapStyleSheet(sheet){
 	document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+
+// get the weather data from openweathermap
+function getWeatherData() {
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric"
+    $.getJSON(url, function(data){
+        var curTemp = Math.round(data.main.temp); //get current temp
+        var curCity = data.name.split(",",1);
+        $('#temp').text(curCity+", Aktuelle Temperatur: "+curTemp+" \u00B0 C");
+        var tempRefreshId = setInterval(function(){
+            $('#temp').text(curCity+", Aktuelle Temperatur: "+curTemp+" \u00B0 C");
+        }, refresh_time); //time in ms
+    });
 }

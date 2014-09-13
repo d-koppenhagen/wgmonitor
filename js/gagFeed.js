@@ -20,7 +20,6 @@
         var id = $(this).attr("id"),
             i, s = "",
             dt;
-        //$("#"+id).empty().append('<img src="loader.gif" />'); // show / hide the loader image
 
         $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
@@ -67,8 +66,7 @@
                     s += '</div></div>';
                 });
 				$("#" + id).append('<div class="Feed9gagList">' + s + "</div>")
-                //$("#" + id).append('<ul class="feedEkList">' + s + "</ul>")
-				//$("#" + id).append('<div class="well well-lg">' + s + "</div>")
+
             }
 
         })

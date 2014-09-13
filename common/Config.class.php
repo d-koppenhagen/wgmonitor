@@ -6,10 +6,6 @@ class Config{
 		self::$pref = array(
 			"stations" => array(13247,11563),  //LVB-Stationen
 			"showmax"  => 16, //Anzahl der Stationen
-			"refreshplan" => 373, //Aktualisierungszeit vom Abfahrtsmonitor - sek
-			"weather_location" => "51.342065,12.377057", //Wetterkoordinaten
-			"tagesschau_onlytoday" => 1, //only show today's posts from Tagesschau RSS feed
-			"refreshtemp" => 500,   // in sec
 		);
 	}
 

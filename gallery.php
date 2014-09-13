@@ -1,4 +1,3 @@
-<?php require_once("common/wlanConfig.php"); Config::init(); ?>
 <div class="row">
   <div class="col-md-9">
   	<h1>Gallerie</h1>
@@ -6,8 +5,8 @@
 		<ol>
         	<li>Logge dich im WLAN ein:
                 <ul>
-                    <li>WLAN-Name (SSID): "<?php echo Config::$pref['wlanssid'] ?>"</li>
-                    <li>Kennwort: "<?php echo Config::$pref['wlankey'] ?>"</li>
+                    <li class="wlan_ssid_data">WLAN-Name (SSID): </li>
+                    <li class="wlan_pass_data">Kennwort: </li>
                 </ul>
             <li>Scanne den QR Code mit deinem Mobilgerät </li>
       		<ul>

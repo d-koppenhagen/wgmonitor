@@ -1,14 +1,12 @@
 <script>
 //plan table refresh
+
+
 	$("#content").load("content.php");
  	var contentRefreshId = setInterval(function(){
  		$("#content").load('content.php');
     },
-    <?php
-        require_once("common/Config.class.php");
-        Config::init();
-        echo Config::$pref['refreshplan'] * 1000 ;
-    ?>
+    refresh_lvb_plan
     );
 </script>
 <div class="row" id="content">

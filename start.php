@@ -1,5 +1,3 @@
-<?php require_once( "common/wlanConfig.php"); Config::init(); ?>
-
 <h3>Herzlich Willkommen in der WG von Mario und Danny!</h3>
 <hr>
 <h4>Aktuelle Informationen:</h4>
@@ -10,17 +8,18 @@
         </ul>
 
         <div class="well well-sm">
+
             <ul class="list-inline">
                 <li>
                     <h4>WLAN-Zugang für Gäste</h4>
                 </li>
                 <li>-</li>
                 <li>
-                    <h4>Netzwerkname (SSID): "<?php echo Config::$pref['wlanssid'] ?>"</h4>
+                    <h4 class="wlan_ssid_data">Netzwerkname (SSID): </h4>
                 </li>
                 <li>-</li>
                 <li>
-                    <h4>Kennwort: "<?php echo Config::$pref['wlankey'] ?>"</h4>
+                    <h4 class="wlan_pass_data">Kennwort: </h4>
                 </li>
             </ul>
         </div>
@@ -66,3 +65,10 @@
 
 </div>
 <!-- End: row 3-->
+
+<script>
+$(document).ready(function(){        //WLAN Data from wlanconfig.js
+        $(".wlan_ssid_data").append(getWlanData().wlanssid);
+        $(".wlan_pass_data").append(getWlanData().wlankey);
+});
+</script>

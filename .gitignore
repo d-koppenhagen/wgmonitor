@@ -2,3 +2,4 @@ gallery/**
 /common/connect.php
 /common/dbConfig.php
 /common/wlanConfig.php
+/js/wlanconfig.js

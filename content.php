@@ -1,3 +1,4 @@
+
 <?php
 error_reporting("E_ALL & ~E_NOTICE");
 ini_set('display_errors', 1);
@@ -10,8 +11,11 @@ require_once("common/Config.class.php");
 Config::init();
 
 //how many rows to show
-$getshow = intval($_GET['show']);
+//$getshow = intval($_GET['show']);
+//$showmax = $_GET['maxstations'];
+
 $showmax = ($getshow >= 1) ? $getshow : Config::$pref['showmax'];
+
 
 
 foreach(Config::$pref['stations'] AS $station){

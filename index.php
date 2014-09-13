@@ -1,7 +1,3 @@
-<?php
-    require_once( "common/Config.class.php");
-    Config::init();
-?>
 <html lang="de">
 <head>
     <title>Infoscreen</title>
@@ -34,6 +30,8 @@
 
     <!-- Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/wlanconfig.js"></script>
+
 </head>
 <body>
     <!-- // Navigation Start -->
@@ -77,14 +75,8 @@
                 <!-- // Version Number End -->
                 <!-- // right navigation part Start -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a>Aktuelle Temperatur: <span id="temp"></span></a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="glyphicon glyphicon-time"></span>
-                            <span id="curTime"></span> Uhr
-                        </a>
-                    </li>
+                    <li><a id="temp"></a></li>
+                    <li><a><span class="glyphicon glyphicon-time"></span><span id="curTime"></span> Uhr</a></li>
                 </ul>
                 <!-- // right navigation part End -->
             </div>
@@ -109,17 +101,7 @@
             </div>
             <!-- // left content part ends here -->
             <!-- // sidebar part starts here -->
-            <div class="col-md-4" id="sidebarRefresh">
-                <!-- refresh Weather container -->
-                <script>
-                    $(document).ready(function(){
-                        $('#sidebarRefresh').load('sidebar.php');
-                        setInterval(function(){
-                            $('#sidebarRefresh').load('sidebar.php');
-                        },1800000); //refresh every 30 Minutes
-                    });
-                </script>
-            </div>
+            <div class="col-md-4" id="sidebarRefresh"></div>
             <!-- // sidebar part ends here -->
         </div>
 
@@ -185,6 +167,7 @@
     });
 </script>
 <!-- // End: Button Click functions -->
+
 
 </body>
 </html>
