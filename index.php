@@ -163,7 +163,7 @@
         $('#contentLeftColumn').load('feeds.html');
     });
     $('#gb_btn').click(function () {
-        $('#contentLeftColumn').load('guestbook.php');
+        $('#contentLeftColumn').load('gb.html');
     });
 </script>
 <!-- // End: Button Click functions -->

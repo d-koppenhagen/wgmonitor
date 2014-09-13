@@ -59,7 +59,7 @@
             <br>Seite neu laden</button>
     </div>
     <div class="col-md-3">
-        <button type="button" class="btn btn-primary btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'settings.php' );" style="width:100%"><span class="glyphicon glyphicon-cog"></span>
+        <button type="button" class="btn btn-primary btn-lg center-block" onclick="$( '#contentLeftColumn' ).load( 'settings.html' );" style="width:100%"><span class="glyphicon glyphicon-cog"></span>
             <br>Verwaltung</button>
     </div>
 

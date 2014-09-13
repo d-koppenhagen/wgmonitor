@@ -1,116 +1,97 @@
- <span class="help-block"></span>
-
- <form  role="form" method="post" id="gbform" class="form-horizontal" >
+<span class="help-block"></span>
+<form role="form" method="post" id="gbform" class="form-horizontal">
     <div class="row">
-      <div class="col-xs-10">
-        <div class="form-group">
-        <label for="name"  class="col-sm-2 control-label">Dein Name:</label>
-        <div class="col-sm-10">
-        <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann"  name="name" required style="width:100%"  />
-      	</div>
+        <div class="col-xs-10">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Dein Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann" name="name" required style="width:100%" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nachricht" class="col-sm-2 control-label">Deine Nachricht</label>
+                <div class="col-sm-10">
+                    <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen" name="nachricht" required rows="4" style="width:100%" />
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-        <label for="nachricht"  class="col-sm-2 control-label">Deine Nachricht</label>
-        <div class="col-sm-10">
-        <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen"  name="nachricht" required  rows="4" style="width:100%"  />
+        <div class="col-xs-2">
+            <button class="webform btn btn-primary btn-block btn-lg" type="submit" id="btnSuccess" style="height:152px;"><span class="glyphicon glyphicon-plus"></span>
+                <br>
+                <br>Eintrag
+                <br>hinzufügen</span>
+            </button>
         </div>
-        </div>
-      </div>
-      <div class="col-xs-2">
-        <button class="webform btn btn-primary btn-block btn-lg" type="submit" id="btnSuccess" style="height:152px;"><span class="glyphicon glyphicon-plus"></span><br><br>Eintrag<br>hinzufügen</span></button>
-      </div>
     </div>
-
-  </form>
+</form>
 
 <hr>
 <div class="row">
-  <div class="col-md-12">
-      <div id="output"></div>
-  </div>
-
+    <div class="col-md-12">
+        <div id="gbDataContainer"></div>
+    </div>
 </div>
 
-<script id="source" language="javascript" type="text/javascript">
-$(document).ready(function(){
-
-    //-----------------------------------------------------------------------
-    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
-    //-----------------------------------------------------------------------
-    $.ajax({
-      url: '/common/gb.php',           //the script to call to get data
-      data: "",                        //you can insert url argumnets here to pass to api.php
-                                       //for example "id=5&parent=6"
-      dataType: 'json',                //data format
-      success: function(data) {        //on recieve of reply
-
-        alert(data);
-        var id = data[0];              //get id
-        var name = data[1];           //get name
-        //--------------------------------------------------------------------
-        // 3) Update html content
-        //--------------------------------------------------------------------
-        $('#output').innerHTML("<b>id: </b>"+id+"<b> name: </b>"+name); //Set output element html
-        //recommend reading up on jquery selectors they are awesome
-        // http://api.jquery.com/category/selectors/
-      } ,
-
-        error: function (xhr, status) {
-            console.log(status);
-        }
-
-    });
-  });
-
-  </script>
 
 <script>
-			$(document).ready(function(){
-				//$("button").click(function(){
-				$("#gbform button[type=submit]").click(function(){
-				//$("#quickcontact").submit(function(){
-			    	// Felder aus dem Formular auslesen
-
-			    	var name = $("#gbform #name");
-					var nachricht = $("#gbform #nachricht");
-
-			    	// Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
-					var data  = 'name=' + name.val() + '&nachricht='  + encodeURIComponent(nachricht.val());
-
-			    	// Die Formularelemente deaktivieren und dem Benutzer
-			    	// anzeigen, dass das Formular versendet wird
-			    	$("#gbform .webform").prop("disabled", true);
-			    	// Die Anfrage an das PHP-Skript abschicken
-
-			    	$.ajax({
-
-			        	url: "/common/gbentry.php", // Der Pfad des PHP-Skriptes
-			        	type: "POST",
-			        	data: data,
-                        success: function (answer) {
-								//alert(answer);
-
-								$("#gbform .webform").prop("disabled", false);
-                          		if(answer == "success"){ // Nachricht wurde erfolgreich verschickt
-                           				// Die Eingabefelder leeren
-										//alert("Success kommt zurück");
-                          				$("#gbform input, #gbform textarea").val("");
-
-			                			$("#gbform #btnSuccess").toggleClass("btn-success", 1000);
-										$( '#contentLeftColumn' ).load( 'guestbook.php',1000);
-
-            					} else {// Es wurden nicht alle Felder ausgefüllt
-                        				// Entsprechendes Feld rot markieren
-										// $("#" + answer).css({"border": "#F00 1px solid"});
-                        				$("#" + answer).parent().addClass("has-error").addClass("has-feedback");
-                        		}
-                		}
-            		});
-			    	// Eigentliches Abschicken des Formulars verhindern,
-			    	// damit die Seite nicht neu lädt
-			    	return false;
-				});
-			});
+    $(document).ready(function () {
+        $.ajax({
+            url: "common/getGuestbookData.php", // Der Pfad des PHP-Skriptes
+            type: "GET",
+            data: "",
+            type: "json",
+            success: function (answer) {
+                var response = jQuery.parseJSON(answer);
+                response.forEach(function (obj) {
+                    var t = (obj.timestamp).split(/[- :]/);
+                    var d = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+                    var dateString = t[2] + "." + (t[1] - 1) + "." + t[0] + " um " + t[3] + ":" + t[4] + " Uhr";
+                    $("#gbDataContainer").append('<div class="well"><div class="row"><div class="col-md-3" style="border-right:dashed;"><h4>' + obj.name + '</h4>' + dateString + '</div><div class="col-md-9">' + obj.text + '</div></div></div>');
+                });
+            }
+        });
+    });
 </script>
 
+<script>
+        $("#gbform button[type=submit]").click(function () {
+            //$("#quickcontact").submit(function(){
+            // Felder aus dem Formular auslesen
 
+            var name = $("#gbform #name");
+            var nachricht = $("#gbform #nachricht");
+
+            // Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
+            var data = 'name=' + name.val() + '&nachricht=' + encodeURIComponent(nachricht.val());
+
+            // Die Formularelemente deaktivieren und dem Benutzer
+            // anzeigen, dass das Formular versendet wird
+            $("#gbform .webform").prop("disabled", true);
+            // Die Anfrage an das PHP-Skript abschicken
+
+            $.ajax({
+
+                url: "common/gbentry.php", // Der Pfad des PHP-Skriptes
+                type: "POST",
+                data: data,
+                dataType: "html",
+                success: function (answer) {
+                    $("#gbform .webform").prop("disabled", false);
+                    var response = answer.replace(/\s/g, "");
+                    if ( response === "success") { // Nachricht wurde erfolgreich verschickt
+                        // Die Eingabefelder leeren
+                        $("#gbform input, #gbform textarea").val("");
+                        $("#gbform #btnSuccess").toggleClass("btn-success", 2000);
+                        $('#contentLeftColumn').load('gb.html', 2000);
+
+                    } else { // Es wurden nicht alle Felder ausgefüllt
+                        // Entsprechendes Feld rot markieren
+                        $("#"+response).parent().addClass("has-error").addClass("has-feedback");
+                    }
+                }
+            });
+            // Eigentliches Abschicken des Formulars verhindern,
+            // damit die Seite nicht neu lädt
+            return false;
+        });
+</script>

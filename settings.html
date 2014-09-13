@@ -3,22 +3,35 @@
 <h3>LVB-Anzeige:</h3>
 <div class="row">
     <div class="col-lg-3">
-        <p>Anzahl der Verbindungen:</p>
+        <p class="text-right">Anzahl der Verbindungen:</p>
     </div>
     <!-- /.col-lg-6 -->
     <div class="col-lg-2">
         <div class="input-group">
             <input type="text" class="form-control">
             <span class="input-group-btn">
-        <button class="btn btn-default" type="button">OK</button>
-      </span>
+               <button class="btn btn-default" type="button">OK</button>
+            </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-3">
+        <p class="text-right">Sidebar refresh time (in min):</p>
+    </div>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-2">
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn" id="sidebar_refresh_time_value" >
+                <button id="set_sidebar_refresh_time" class="btn btn-default" type="button">OK</button>
+            </span>
         </div>
         <!-- /input-group -->
     </div>
     <!-- /.col-lg-6 -->
 </div>
 <!-- /row -->
-
 
 
 <h3>Layout ändern:</h3>
@@ -52,5 +65,11 @@
     });
     $('#yeti_layout_btn').click(function () {
         swapStyleSheet('css/yeti.min.css');
+    });
+
+
+    $('#set_sidebar_refresh_time').click(function () {
+        var newTime = $('#sidebar_refresh_time_value').text();
+        refresh_time = newTime;
     });
 </script>

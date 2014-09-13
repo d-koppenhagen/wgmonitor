@@ -4,11 +4,11 @@
 * Author : Engin KIZIL http://www.enginkizil.com */
 
 (function($) {
-    $.fn.FeedExtra3 = function(opt) {
+    $.fn.TagesschauFeed = function(opt) {
 
 		// default settings:
         var def = $.extend({
-            FeedUrl: "http://rss.cnn.com/rss/edition.rss",
+            FeedUrl: "http://www.tagesschau.de/xml/rss2",
             MaxCount: 5,
             ShowDesc: true,
             ShowPubDate: true,
@@ -20,6 +20,7 @@
         var id = $(this).attr("id"),
             i, s = "",
             dt;
+        //$("#"+id).empty().append('<img src="loader.gif" />'); // show / hide the loader image
 
         $.ajax({
             url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + def.MaxCount + "&output=json&q=" + encodeURIComponent(def.FeedUrl) + "&hl=en&callback=?",
@@ -49,6 +50,7 @@
 					s += '</div></div></div>';
 
 					s += '	<div class="panel-body">';
+
                     if (def.ShowDesc) {
                         if (def.DescCharacterLimit > 0 && item.content.length > def.DescCharacterLimit) {
                             //s += '<div class="itemContent">' + item.content.substr(0, def.DescCharacterLimit) + "...</div>"
@@ -62,15 +64,10 @@
 
 					    }
                     }
-                    s += '<p  class="text-center"><video src="'+ item.link +'" type="video/mp4" controls width="640" ></video></p>';
 
-                    s += '</div>';
-                    //s += '<div class="panel-footer"><a href="'+ item.link +'" target="_blank">Zum Video</a></div>';
-					s += '</div>';
+					s += '</div></div>';
                 });
-				$("#" + id).append('<div class="FeedExtra3List">' + s + "</div>")
-                //$("#" + id).append('<ul class="feedEkList">' + s + "</ul>")
-				//$("#" + id).append('<div class="well well-lg">' + s + "</div>")
+				$("#" + id).append('<div class="tagesschauFeedList">' + s + "</div>")
             }
 
         })

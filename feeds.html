@@ -1,24 +1,44 @@
 <h3><span class="glyphicon glyphicon-bullhorn"></span> Feeds</h3>
 <div class="row">
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#FeedView' ).load( 'postillon.html' );" style="width:100%">Postillon News</button>
+    <div class="col-md-12">
+    <div class="btn-group" data-toggle="buttons">
+        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="postillon_btn">Postillon News</button>
+        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="extra3_btn">Extra3</button>
+        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="9gag_btn">9gag</button>
+        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="ebb_btn">Eisbären Berlin</button>
+        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="tagesschau_btn">Tagesschau.de</button>
     </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#FeedView' ).load( 'extra3.html' );" style="width:100%">Extra3</button>
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#FeedView' ).load( '9gag.html' );" style="width:100%">9gag</button>
-    </div>
-    <div class="col-md-3">
-        <button type="button" class="btn btn-default btn-lg center-block" onclick="$( '#FeedView' ).load( 'eisbaeren.html' );" style="width:100%">Eisbären Berlin</button>
     </div>
 </div>
 
+
 <!-- container which is used for the Feed contents -->
 <div id="FeedView"></div>
+
+<!-- // Start: Button Click functions -->
+<script>
+    $('#postillon_btn').click(function () {
+        $( '#FeedView' ).load( 'postillon.html' );
+    });
+    $('#extra3_btn').click(function () {
+        $( '#FeedView' ).load( 'extra3.html' );
+    });
+    $('#9gag_btn').click(function () {
+        $( '#FeedView' ).load( '9gag.html' );
+    });
+    $('#ebb_btn').click(function () {
+        $( '#FeedView' ).load( 'eisbaeren.html' );
+    });
+    $('#tagesschau_btn').click(function () {
+        $( '#FeedView' ).load( 'tagesschau.html' );
+    });
+
+</script>
+<!-- // End: Button Click functions -->
 
 <!-- Feeds (must be loaded after jQuery -->
         <script type="text/javascript" src="js/postillonFeed.js"></script>
         <script type="text/javascript" src="js/extra3Feed.js"></script>
         <script type="text/javascript" src="js/gagFeed.js"></script>
         <script type="text/javascript" src="js/eisbaerenFeed.js"></script>
+        <script type="text/javascript" src="js/tagesschauFeed.js"></script>

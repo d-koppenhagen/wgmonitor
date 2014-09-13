@@ -148,12 +148,15 @@
 <!--Zusammensetzen der Vorhersagetabelle-->
 
 
-  <tr>
+  <thead>
+      <tr>
     <th><h3>Wetter</h3></th>
-    <th><h4>heute <?php echo $datum_heute; ?></h4></th>
-    <th><h4>morgen <?php echo $datum_morgen; ?></h4></th>
-    <th><h4>übermorgen <?php echo $datum_uebermorgen; ?></h4></th>
-    </tr>
+    <th class="text-center"><h4>heute<br><?php echo $datum_heute; ?></h4></th>
+    <th class="text-center"><h4>morgen<br><?php echo $datum_morgen; ?></h4></th>
+    <th class="text-center"><h4>übermorgen<br><?php echo $datum_uebermorgen; ?></h4></th>
+          </tr>
+  </thead>
+<tbody>
   <tr>
     <td class="text-left"><h4>Morgens:</h4></td>
     <td><img src="img/icons/d_<?php echo $wetter_heute_frueh; ?>_b.png" width="61" height="48" title="<?php echo $wetter_heute_frueh_txt;?>"/></td>
@@ -202,7 +205,7 @@
     <td><h4><?php echo $wind_geschwindigkeit_morgen;?> km/h</h4></td>
     <td><h4><?php echo $wind_geschwindigkeit_uebermorgen;?> km/h</h4></td>
     </tr>
-
+</tbody>
 
  <!-- END: Wetter.com Script-->
 

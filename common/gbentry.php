@@ -14,16 +14,6 @@
     $name = $_POST[name];
     $nachricht = $_POST[nachricht];
 
- 			// Nachricht eintragen
- 			// $var->prepare() bereitet die Anweisung für die Ausführung vor.
- 			/*$kommando = $VERBINDUNG->prepare("INSERT INTO `guestbook`
-                                   SET
-                                    `name` = :name,
-                                    `text` = :nachricht");*/
-
-			// escape variables for security
-			//$firstname = mysqli_real_escape_string($VERBINDUNG, $_POST['name']);
-			//$lastname = mysqli_real_escape_string($VERBINDUNG, $_POST['nachricht']);
 
 
 			$sql="INSERT INTO `wg`.`guestbook` (`id`, `name`, `text`, `timestamp`) VALUES (NULL, '".$name."', '".$nachricht."', CURRENT_TIMESTAMP);";
@@ -39,15 +29,6 @@
  			if ($kommando->execute()) {
   				echo '';
  			}
-
- 			// $var->bindParam() bindet einen Parameter an den angegebenen Variablennamen
- 			// (die Platzhalter werden mit den POST-Variablen ersetzt).
- 			//$kommando->bindParam(':name', $_POST["name"]);
- 			//$kommando->bindParam(':text', $_POST["nachricht"]);
-
- 			// $var->execute() führt die vorbereitete Anweisung aus
- 			//$kommando->execute();
-
-	    echo "success";
+            echo "success";
 
 ?>
