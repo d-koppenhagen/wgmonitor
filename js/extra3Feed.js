@@ -62,7 +62,7 @@
 
 					    }
                     }
-                    s += '<p  class="text-center"><video src="'+ item.link +'" type="video/mp4" controls width="640" ></video></p>';
+                    s += '<p  class="text-center"><video src="'+ item.link +'" type="video/mp4" controls width="95%" ></video></p>';
 
                     s += '</div>';
                     //s += '<div class="panel-footer"><a href="'+ item.link +'" target="_blank">Zum Video</a></div>';

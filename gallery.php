@@ -108,7 +108,7 @@ var qrcode = new QRCode(document.getElementById("qrcode"), {
 });
 
 function makeCode () {
-	var elText = "http://10.0.1.12:8080/gallery/";
+	var elText = getWlanData().ipconfig+"/gallery";
 	qrcode.makeCode(elText);
 }
 makeCode();
