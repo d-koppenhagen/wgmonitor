@@ -1,12 +1,10 @@
 <html lang="de">
 <head>
     <title>Infoscreen</title>
-
     <!-- used to start like an app with google chrome on android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico">
 
@@ -31,19 +29,21 @@
     <!-- Javascript -->
     <script src="js/main.js"></script>
     <script src="js/wlanconfig.js"></script>
-
 </head>
 <body>
     <!-- // Navigation Start -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-    </div>
-            <div class="collapse navbar-collapse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation_main">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation_main">
                 <!-- // left navigation part Start -->
                 <ul class="nav navbar-nav">
                     <!-- for colorate active link use: <li class="active"> -->
@@ -62,17 +62,12 @@
                     <li id="feed_btn">
                         <a href="#feeds"> <span class="glyphicon glyphicon-bullhorn"></span> Feeds</a>
                     </li>
-                    <li id="gb_btn">
+                    <li class="gb_btn">
                         <a href="#gb"> <span class="glyphicon glyphicon-comment"></span> Gästebuch</a>
                     </li>
-
                 </ul>
                 <!-- // left navigation part End -->
-                <!-- // Version Number Start -->
-                <p class="navbar-text">
-                    <small>WG Monitor Version 0.8.6</small>
-                </p>
-                <!-- // Version Number End -->
+
                 <!-- // right navigation part Start -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a id="temp"></a></li>
@@ -90,14 +85,7 @@
             <!-- // left content part starts here -->
             <div class="col-md-8">
                 <!-- the following container will be filled with Ajax after loading...-->
-                <div id="contentLeftColumn">
-                    <script>
-                        $(document).ready(function () {
-                            $('#contentLeftColumn').load('start.php');
-                        });
-                    </script>
-                </div>
-                <!-- End of contentLeftColumn -->
+                <div id="contentLeftColumn"></div>
             </div>
             <!-- // left content part ends here -->
             <!-- // sidebar part starts here -->
@@ -136,14 +124,15 @@
             </div>
             <!-- End of the modal dialog -->
         </div>
-        <!-- End of Bootstrap Image Gallery lightbox -->
-        <!-- Start: Blueimp Gallery Scripts -->
-        <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-        <script src="js/bootstrap-image-gallery.min.js"></script>
-        <!-- End: Blueimp Gallery Scripts -->
-
     </div>
     <!-- // content end -->
+
+
+<!-- End of Bootstrap Image Gallery lightbox -->
+<!-- Start: Blueimp Gallery Scripts -->
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+<!-- End: Blueimp Gallery Scripts -->
 
 <!-- // Start: Button Click functions -->
 <script>
@@ -162,7 +151,7 @@
     $('#feed_btn').click(function () {
         $('#contentLeftColumn').load('feeds.html');
     });
-    $('#gb_btn').click(function () {
+    $('.gb_btn').click(function () {
         $('#contentLeftColumn').load('gb.html');
     });
 </script>

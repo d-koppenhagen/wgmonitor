@@ -15,6 +15,8 @@ $(document).ready(function(){
         getWeatherData();
         showTime();
 
+        $('#contentLeftColumn').load('start.php');
+
         $('#sidebarRefresh').load('sidebar.php');
         setInterval(function(){
             $('#sidebarRefresh').load('sidebar.php');

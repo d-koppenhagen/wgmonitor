@@ -71,9 +71,7 @@ function getFileList($directory)
 		   			echo '
   		            <div class="col-xs-12 col-md-4 col-lg-3" id="image'.$datei.'">
   		                <a href="'.$data.'" data-gallery class="thumbnail">
-                          <div class="well well-lg">
 							<img data-src="'.$thumb.'" src="'.$thumb.'" class="img-responsive" >
-                          </div>
     					</a>
 					</div>
     		        ';

@@ -1,4 +1,4 @@
-<table class="table table-striped text-center">
+<table class="table table-striped text-center table-hover">
 
 
   <?php
@@ -146,16 +146,14 @@
 
 
 <!--Zusammensetzen der Vorhersagetabelle-->
-
-
-  <thead>
+<thead>
       <tr>
-    <th><h3>Wetter</h3></th>
-    <th class="text-center"><h4>heute<br><?php echo $datum_heute; ?></h4></th>
-    <th class="text-center"><h4>morgen<br><?php echo $datum_morgen; ?></h4></th>
-    <th class="text-center"><h4>übermorgen<br><?php echo $datum_uebermorgen; ?></h4></th>
-          </tr>
-  </thead>
+        <th><h3>Wetter</h3></th>
+        <th class="text-center"><h4>heute<br><?php echo $datum_heute; ?></h4></th>
+        <th class="text-center"><h4>morgen<br><?php echo $datum_morgen; ?></h4></th>
+        <th class="text-center"><h4>übermorgen<br><?php echo $datum_uebermorgen; ?></h4></th>
+      </tr>
+</thead>
 <tbody>
   <tr>
     <td class="text-left"><h4>Morgens:</h4></td>
@@ -182,29 +180,29 @@
     <td><img src="img/icons/n_<?php echo $wetter_uebermorgen_nacht; ?>_b.png" alt="" width="61" height="48" title="<?php echo $wetter_uebermorgen_nacht_txt;?>" /></td>
     </tr>
   <tr>
-    <td class="text-left"><h4>Temperatur:</h4><small>(min/max in °C)</small></td>
+    <td class="text-left"><h4>Tempe&shy;ratur:</h4><small>(min/max in °C)</small></td>
     <td><h4><span class="temp_min"><?php echo $tmin_heute; ?></span> | <span class="temp_max"><?php echo $tmax_heute; ?></span></h4></td>
     <td><h4><span class="temp_min"><?php echo $tmin_morgen; ?></span> | <span class="temp_max"><?php echo $tmax_morgen; ?></span></h4></td>
     <td><h4><span class="temp_min"><?php echo $tmin_uebermorgen; ?></span> | <span class="temp_max"><?php echo $tmax_uebermorgen; ?></span></h4></td>
     </tr>
   <tr>
-    <td class="text-left"><h4>Niederschlagsrisiko:</h4></td>
+    <td class="text-left"><h4>Nieder&shy;schlags&shy;risiko:</h4></td>
     <td><h4><?php echo $niederschlags_ws_heute;?>%</h4></td>
     <td><h4><?php echo $niederschlags_ws_morgen;?>%</h4></td>
     <td><h4><?php echo $niederschlags_ws_uebermorgen;?>%</h4></td>
     </tr>
   <tr>
-    <td class="text-left"><h4>Windrichtung:</h4></td>
+    <td class="text-left"><h4>Wind&shy;richt&shy;ung:</h4></td>
     <td><img src="img/icons/<?php echo $wind_richtung_heute;?>.png" alt="<?php echo $wind_richtung_heute;?>" title="<?php echo $wind_richtung_heute;?>" width="50" height="50"/></td>
     <td><img src="img/icons/<?php echo $wind_richtung_morgen;?>.png" alt="<?php echo $wind_richtung_morgen;?>" title="<?php echo $wind_richtung_morgen;?>" width="50" height="50"/></td>
     <td><img src="img/icons/<?php echo $wind_richtung_uebermorgen;?>.png" alt="<?php echo $wind_richtung_uebermorgen;?>" title="<?php echo $wind_richtung_uebermorgen;?>" width="50" height="50"/></td>
     </tr>
   <tr>
-    <td class="text-left"><h4>Windgeschwindigkeit:</h4></td>
+    <td class="text-left"><h4>Wind&shy;ge&shy;schwin&shy;dig&shy;keit:</h4></td>
     <td><h4><?php echo $wind_geschwindigkeit_heute;?> km/h</h4></td>
     <td><h4><?php echo $wind_geschwindigkeit_morgen;?> km/h</h4></td>
     <td><h4><?php echo $wind_geschwindigkeit_uebermorgen;?> km/h</h4></td>
-    </tr>
+  </tr>
 </tbody>
 
  <!-- END: Wetter.com Script-->
