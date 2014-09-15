@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-9">
-  	<h1>Gallerie</h1>
+  	<h1>Galerie</h1>
     <h4>Bilder auf deinem Mobilgerät abrufen:</h4>
 		<ol>
         	<li>Logge dich im WLAN ein:
