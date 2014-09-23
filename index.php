@@ -58,7 +58,7 @@
                     <li class="item" id="feed_btn">
                         <a href="#feeds"> <span class="glyphicon glyphicon-bullhorn"></span> Feeds</a>
                     </li>
-                    <li class="item" class="gb_btn">
+                    <li class="item" class="gb_btn" id="gb_btn_main">
                         <a href="#gb"> <span class="glyphicon glyphicon-comment"></span> Gästebuch</a>
                     </li>
                 </ul>
@@ -156,8 +156,8 @@
     $('#feed_btn').click(function () {
         $('#contentLeftColumn').load('feeds.html');
     });
-    $('.gb_btn').click(function () {
-        $('#contentLeftColumn').load('gb.html');
+    $('#gb_btn_main').click(function () {
+        $( '#contentLeftColumn' ).load( 'gb.html' );
     });
 
 $('#main_menu .item').click(function(evt) {
