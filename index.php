@@ -41,24 +41,24 @@
             </div>
             <div class="collapse navbar-collapse" id="navigation_main">
                 <!-- // left navigation part Start -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="main_menu">
                     <!-- for colorate active link use: <li class="active"> -->
-                    <li id="home_btn">
+                    <li class="item" id="home_btn">
                         <a href="#home"> <span class="glyphicon glyphicon-home"></span> Übersicht</a>
                     </li>
-                    <li id="LVB_btn">
+                    <li class="item" id="LVB_btn">
                         <a href="#lvb"> <span class="glyphicon glyphicon-th-list"></span> LVB Info</a>
                     </li>
-                    <li id="cal_btn">
+                    <li class="item" id="cal_btn">
                         <a href="#cal"> <span class="glyphicon glyphicon-calendar"></span> Kalender</a>
                     </li>
-                    <li id="pic_btn">
+                    <li class="item" id="pic_btn">
                         <a href="#pictures"> <span class="glyphicon glyphicon-camera"></span> Bilder</a>
                     </li>
-                    <li id="feed_btn">
+                    <li class="item" id="feed_btn">
                         <a href="#feeds"> <span class="glyphicon glyphicon-bullhorn"></span> Feeds</a>
                     </li>
-                    <li class="gb_btn">
+                    <li class="item" class="gb_btn">
                         <a href="#gb"> <span class="glyphicon glyphicon-comment"></span> Gästebuch</a>
                     </li>
                 </ul>
@@ -159,6 +159,12 @@
     $('.gb_btn').click(function () {
         $('#contentLeftColumn').load('gb.html');
     });
+
+$('#main_menu .item').click(function(evt) {
+    evt.stopPropagation(); //stops the document click action
+    $(this).siblings().removeClass('active');
+    $(this).toggleClass('active');
+});
 </script>
 <!-- // End: Button Click functions -->
 </body>

@@ -1,16 +1,11 @@
 <h3><span class="glyphicon glyphicon-bullhorn"></span> Feeds</h3>
-<div class="row">
-    <div class="col-md-12">
-    <div class="btn-group" data-toggle="buttons">
-        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="postillon_btn">Postillon News</button>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="extra3_btn">Extra3</button>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="9gag_btn">9gag</button>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="ebb_btn">Eisbären Berlin</button>
-        <button type="button" class="btn btn-default btn-lg" data-toggle="button" id="tagesschau_btn">Tagesschau.de</button>
-    </div>
-    </div>
-</div>
-
+<ul class="nav nav-pills" role="tablist" id="feed_menu">
+  <li class="item"><a id="postillon_btn">Postillon News</a></li>
+  <li class="item"><a id="extra3_btn">Extra3</a></li>
+  <li class="item"><a id="9gag_btn">9gag</a></li>
+  <li class="item"><a id="ebb_btn">Eisbären Berlin</a></li>
+  <li class="item"><a id="tagesschau_btn">Tagesschau.de</a></li>
+</ul>
 
 <!-- container which is used for the Feed contents -->
 <div id="FeedView"></div>
@@ -33,6 +28,11 @@
         $( '#FeedView' ).load( 'tagesschau.html' );
     });
 
+$('#feed_menu .item').click(function(evt) {
+    evt.stopPropagation(); //stops the document click action
+    $(this).siblings().removeClass('active');
+    $(this).toggleClass('active');
+});
 </script>
 <!-- // End: Button Click functions -->
 

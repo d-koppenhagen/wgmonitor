@@ -25,6 +25,11 @@ h4{
     font-size: 15px;
 }
 
+button{
+word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
 .navbar-default .navbar-nav > li > a {
 	color:#e0e0e0;
 	/*font-size: 20px;*/

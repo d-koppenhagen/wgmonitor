@@ -28,17 +28,22 @@
                         //open recursive (onclick with jsondata[i].name)
                         countfolders++;
                         var elementParts = elementURL.split("/");
-                        var folderElement = '<div class="col-xs-12 col-md-4 col-lg-3">';
-                                folderElement += '<button type="button" class="btn btn-primary btn-lg btn-block" id="folder_'+countfolders+'">';
-                                    folderElement += '<span class="glyphicon glyphicon-folder-open"></span>';
-                                    folderElement += '<br>'+elementParts[elementParts.length - 2]+'</button></div>';
-                        $("#imageThumbnails").append(folderElement);
 
-                        $('#folder_'+countfolders).click(function () {
+                        var folderElement = '<li class="item"><a id="folder_'+countfolders+'">';
+                        folderElement += elementParts[elementParts.length - 2]+'</a></li>';
+                        //append each folder-container to placeholder
+                        $("#subfolderPlaceholder").append(folderElement);
+
+                        //calling the click function for each button with correct URL
+                        getSubfolderData(elementURL);
+
+                        //change folder for reading data
+                        function getSubfolderData (elementURL){
+                            $('#folder_'+countfolders).click(function () {
                                 $('#imageThumbnails').empty();
-                                getImageData('../gallery/thumbs/');
-                        });
-
+                                getImageData(elementURL);
+                            });
+                        }
                     } else {
 
                         //var thumburl = folder+'/thumbs/'+jsondata[i];
@@ -51,6 +56,13 @@
                         $("#imageThumbnails").fadeIn("slow");
                     }
                 }
+
+                $('#subfolderPlaceholder .item').click(function(evt) {
+                    evt.stopPropagation(); //stops the document click action
+                    $(this).siblings().removeClass('active');
+                    $(this).toggleClass('active');
+                });
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("error: jqXHR: "+jqXHR+" textStatus: "+textStatus+" errorThrown: "+errorThrown);
