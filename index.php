@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css" />
     <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css" />
 
-    <!-- AngularJS -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
-
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -113,10 +109,19 @@
                         </div>
                         <div class="modal-body next"></div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default pull-left prev"> <i class="glyphicon glyphicon-chevron-left"></i> Previous</button>
-                            <button type="button" class="btn btn-default play-pause" id="StartSlideshow" onclick="$('#StartSlideshow').toggleClass('active');">Slideshow <i class="glyphicon glyphicon-play-circle"></i>
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i> Previous
                             </button>
-                            <button type="button" class="btn btn-primary next">Next <i class="glyphicon glyphicon-chevron-right"></i>
+                            <button type="button" class="btn btn-default play-pause" id="StartSlideshow">Slideshow
+                                <i class="glyphicon glyphicon-play-circle"></i>
+                                <script>
+                                $('#home_btn').click(function () {
+                                    $('#StartSlideshow').toggleClass('active');
+                                });
+                                </script>
+                            </button>
+                            <button type="button" class="btn btn-primary next">Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
                             </button>
                         </div>
                     </div>
@@ -126,7 +131,6 @@
         </div>
     </div>
     <!-- // content end -->
-
 
 <!-- End of Bootstrap Image Gallery lightbox -->
 <!-- Start: Blueimp Gallery Scripts -->
@@ -146,7 +150,8 @@
         $('#contentLeftColumn').load('timetable.php');
     });
     $('#pic_btn').click(function () {
-        $('#contentLeftColumn').load('gallery.php');
+        $('#contentLeftColumn').load('gal.html');
+        //$('#contentLeftColumn').load('gallery.php');
     });
     $('#feed_btn').click(function () {
         $('#contentLeftColumn').load('feeds.html');
@@ -156,7 +161,5 @@
     });
 </script>
 <!-- // End: Button Click functions -->
-
-
 </body>
 </html>

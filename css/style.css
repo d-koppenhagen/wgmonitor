@@ -33,17 +33,20 @@ h4{
 #gallerythumbs .thumbnail > img, .thumbnail a > img {
     margin: 20 auto;
 }
-/*
+
 #gallerythumbs .img-responsive{
     max-height: 130px;
     align-content: center;
 }
 
-#gallerythumbs .well{
-    height: 150px;
-    overflow: hidden;
+.imagecontainer {
+  height: 200px;
 }
-*/
+
+#imageThumbnails {
+    display:none;
+}
+
 
  /* ---------------- SCROLLBAR --------------------------------------------  */
 /* Reference: http://css-tricks.com/custom-scrollbars-in-webkit/
@@ -138,3 +141,4 @@ h4{
     visibility: hidden;
 }
 <!--End: Style for Atom Feed parser-->
+

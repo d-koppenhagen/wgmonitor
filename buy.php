@@ -1,7 +1,5 @@
  <span class="help-block"></span>
-
  <form  role="form" method="post" id="shopform" class="form-horizontal" >
-
     <div class="input-group">
       <input type="text" class="webform form-control" id="name" name="name" style="width: 80%" required placeholder="Was wird benötigt?">
       <input type="text" class="webform form-control" id="quantity" name="quantity" style="width: 20%;"  placeholder="Anzahl">
@@ -10,7 +8,6 @@
       </span>
     </div><!-- /input-group -->
   </form>
-
 <hr>
 <div class="row">
   <div class="col-md-12">
@@ -23,83 +20,59 @@
             </tr>
           </thead>
           <tbody>
-<?php
-	require_once("common/dbConfig.php");
+              <?php
+	           require_once("common/dbConfig.php");
+                // Abrufen der Daten
+                $kommando = $VERBINDUNG->query("SELECT `id`, `name`, `quantity`, `check`, `timestamp` FROM `shoppingList` ORDER BY  `timestamp` DESC ");
+                $listitem = $kommando->fetchAll(PDO::FETCH_OBJ);
 
-// Abrufen der Daten
-$kommando = $VERBINDUNG->query("SELECT `id`, `name`, `quantity`, `check`, `timestamp`
-                                FROM `shoppingList` ORDER BY  `timestamp` DESC ");
-$listitem = $kommando->fetchAll(PDO::FETCH_OBJ);
-
-foreach ($listitem as $item) {
-	$itemNumber = $item->id;
-
-    $checkAttribute = "";
-
-    if ($item->check == "1"){
-        $checkAttribute = "checked";
-    }
-
- echo ' <tr>
-            <td>'.$item->name .'</td>
-		    <td class="text-center">' .$item->quantity .'</td>
-            <td class="text-center"><input type="checkbox" '.$checkAttribute.'></td>
-        </tr>';
-}
-?>
-              </tbody>
-          </table>
+                foreach ($listitem as $item) {
+	               $itemNumber = $item->id;
+                   $checkAttribute = "";
+                    //check if item is already checked
+                    if ($item->check == "1"){
+                        $checkAttribute = "checked";
+                    }
+                    echo '<tr>';
+                    echo '<td>'.$item->name .'</td>';
+                    echo '<td class="text-center">' .$item->quantity .'</td>';
+                    echo '<td class="text-center"><input type="checkbox" '.$checkAttribute.'></td>';
+                    echo '</tr>';
+                }
+              ?>
+            </tbody>
+        </table>
 	</div>
-
 </div>
-
-
-
 <script>
-			$(document).ready(function(){
-				//$("button").click(function(){
-				$("#shopform button[type=submit]").click(function(){
-				//$("#quickcontact").submit(function(){
-			    	// Felder aus dem Formular auslesen
-
-			    	var name = $("#shopform #name");
-					var quantity = $("#shopform #quantity");
-
-			    	// Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
-					var data  = 'name=' + name.val() + '&quantity='  + quantity.val();
-
-			    	// Die Formularelemente deaktivieren und dem Benutzer
-			    	// anzeigen, dass das Formular versendet wird
-			    	$("#shopform .webform").prop("disabled", true);
-			    	// Die Anfrage an das PHP-Skript abschicken
-
-			    	$.ajax({
-
-			        	url: "common/shopentry.php", // Der Pfad des PHP-Skriptes
-			        	type: "POST",
-			        	data: data,
-                        success: function (answer) {
-								//alert(answer);
-
-								$("#shopform .webform").prop("disabled", false);
-                          		if(answer == "success"){ // Nachricht wurde erfolgreich verschickt
-                           				// Die Eingabefelder leeren
-										//alert("Success kommt zurück");
-                          				$("#shopform input, #shopform input").val("");
-
-			                			$("#shopform #btnSuccess").toggleClass("btn-success", 1000);
-										$( '#contentLeftColumn' ).load( 'buy.php',1000);
-
-            					} else {// Es wurden nicht alle Felder ausgefüllt
-                        				// Entsprechendes Feld rot markieren
-										// $("#" + answer).css({"border": "#F00 1px solid"});
-                        				$("#" + answer).parent().addClass("has-error").addClass("has-feedback");
-                        		}
-                		}
-            		});
-			    	// Eigentliches Abschicken des Formulars verhindern,
-			    	// damit die Seite nicht neu lädt
-			    	return false;
-				});
-			});
+$(document).ready(function(){
+$("#shopform button[type=submit]").click(function(){
+   	// read values from form fields
+   	var name = $("#shopform #name");
+	var quantity = $("#shopform #quantity");
+    // create PHP query
+    var data  = 'name=' + name.val() + '&quantity='  + quantity.val();
+    // Disable elements while process is running
+   	$("#shopform .webform").prop("disabled", true);
+    // Send PHP query via ajax
+    $.ajax({
+        url: "common/shopentry.php",
+        type: "POST",
+        data: data,
+        success: function (answer) {
+            $("#shopform .webform").prop("disabled", false);
+            if(answer == "success"){
+                //if php echo is "success"
+                $("#shopform input, #shopform input").val("");
+                $("#shopform #btnSuccess").toggleClass("btn-success", 1000);
+                $( '#contentLeftColumn' ).load( 'buy.php',1000);
+            } else {
+                //if fields are empty
+                $("#" + answer).parent().addClass("has-error").addClass("has-feedback");
+            }
+        }
+    });
+    return false;   // return false to disable 'submit'
+});
+});
 </script>

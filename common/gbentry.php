@@ -1,34 +1,28 @@
 <?php
-
-
 	require("dbConfig.php");
-	// Wurde das Formular abgesendet
-	//if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	// Überprüfen, ob alle Felder korrekt ausgefüllt wurden
-    // und ggf. fehlende Daten an JavaScript zurückgeben (auf Reihenfolge achten)
+	// check if all fields aren't empty
+    //exit (echo) which field is empty to change later (has-error class)
     if($_POST[name] == ''){exit ("name");}
     if($_POST[nachricht] == ''){exit ("nachricht");}
 
-    // Felder in Variablen schreiben (optional)
+    // write field values in vars
     $name = $_POST[name];
     $nachricht = $_POST[nachricht];
 
+    //SQL query -> get data from db
+    $sql="INSERT INTO `wg`.`guestbook` (`id`, `name`, `text`, `timestamp`) VALUES (NULL, '".$name."', '".$nachricht."', CURRENT_TIMESTAMP);";
 
+    //prepare query
+    $command = $VERBINDUNG->prepare($sql);
 
-			$sql="INSERT INTO `wg`.`guestbook` (`id`, `name`, `text`, `timestamp`) VALUES (NULL, '".$name."', '".$nachricht."', CURRENT_TIMESTAMP);";
+    // bind params
+    $command->bindParam(':name', $_POST["name"]);
+    $command->bindParam(':text', $_POST["nachricht"]);
 
-			$kommando = $VERBINDUNG->prepare($sql);
-
- 			// $var->bindParam() bindet einen Parameter an den angegebenen Variablennamen
- 			// (die Platzhalter werden mit den POST-Variablen ersetzt).
- 			$kommando->bindParam(':name', $_POST["name"]);
- 			$kommando->bindParam(':text', $_POST["nachricht"]);
-
- 			// $var->execute() führt die vorbereitete Anweisung aus
- 			if ($kommando->execute()) {
-  				echo '';
- 			}
-            echo "success";
-
+    // execute if true (no error)
+    if ($command->execute()) {
+  		echo '';
+    }
+    echo "success";
 ?>

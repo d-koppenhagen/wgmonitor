@@ -8,8 +8,6 @@ class Config{
 			"showmax"  => 16, //Anzahl der Stationen
 		);
 	}
-
-
 	//Aufruf des Templates
 	public static function getTemplate($tpl){
 		$tplpath = "templates/";

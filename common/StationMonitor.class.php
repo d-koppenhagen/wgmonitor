@@ -1,9 +1,7 @@
 <?php
-
 class StationMonitor{
 	private $data = array();
 	private $stationID;
-
 	public function __construct($stationID){
 		$this->stationID = $stationID;
 		$useragent = "easy.GO Client Android v4.0.3_easyGO_4.0.7 Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36;";
@@ -29,7 +27,6 @@ class StationMonitor{
 
 	public function getStationName(){
 		$name = $this->data->stationName;
-
 		//cut away "Leipzig" from the beginning of the label
 		if(substr($name, 0, 9) == "Leipzig, "){
 			$name = substr($name, 9);
@@ -40,7 +37,6 @@ class StationMonitor{
 
 	private function createClientID(){
 		$out = null;
-
 		for($i = 0; $i < 23; $i++){
 			$out .= rand(0,9);
 		}
@@ -50,5 +46,4 @@ class StationMonitor{
 
 
 }
-
 ?>
