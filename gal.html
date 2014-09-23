@@ -48,6 +48,7 @@
 </div>
 
 <script src="js/qrcode.js"></script>
+<script src="js/readFiles.js"></script>
 
 <!-- Buttons -->
 <script>
@@ -76,50 +77,7 @@ makeCode();
 <!-- Begin read files -->
  <script>
     $(document).ready(function () {
-      var rootfolder = 'gallery';
+      var rootfolder = '../gallery';
       getImageData(rootfolder);
     });
-    function getImageData(folder){
-        $.ajax({
-            type: "get",
-            method: "get",
-            url: "common/getFiles.php", // Der Pfad des PHP-Skriptes
-            data: "folder="+folder,
-            contentType: "application/json; charset=utf-8",
-            success: function (answer) {
-                //var jsonAnswer = '{ "files" : [ '+answer+' ]}';
-                var jsondata = JSON.parse(answer);
-
-                function objLength(obj){
-                    var i=0;
-                    for (var x in obj){
-                        if(obj.hasOwnProperty(x)){
-                            i++;
-                        }
-                    }
-                    return i;
-                }
-                for(var i = 0 ; i < objLength(jsondata) ; i++){
-                    if (typeof jsondata[i] === 'undefined'){
-                        var folderElement = '<p><a>Folder with name: '+subfolder[j]+'</a></p>';
-                        $("#imageThumbnails").append(folderElement);
-                    } else {
-                        var imageurl = folder+'/'+jsondata[i];
-                        var thumburl = folder+'/thumbs/'+jsondata[i];
-                        var imagecontainer = '<div class="col-xs-12 col-md-4 col-lg-3 imagecontainer" id="image'+imageurl+'">';
-                                imagecontainer += '<a href="'+imageurl+'" data-gallery class="thumbnail">';
-                                    imagecontainer += '<img data-src="'+thumburl+'" src="'+thumburl+'" class="img-responsive" >';
-                                imagecontainer += '</a>';
-                            imagecontainer += '</div>';
-                        $("#imageThumbnails").append(imagecontainer); //last two : thumbs
-                        $("#imageThumbnails").fadeIn("slow");
-                    }
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log("error: jqXHR: "+jqXHR+" textStatus: "+textStatus+" errorThrown: "+errorThrown);
-            }
-        });
-      };
-</script>
-<!-- End read files -->
+ </script>

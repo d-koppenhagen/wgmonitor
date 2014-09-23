@@ -1,75 +1,44 @@
 <?php
 
-//$queryfolder = POST['folder'];
-//$startpath = "../".$queryfolder;
+$startpath = $_GET['folder'];
 //echo '<script>alert("'.$testvar.'")</script>';
 
-$startpath = "../gallery";
+//$startpath = "../gallery";
 
-function dirToArray($dir) {
-    $contents = array();
-    foreach (scandir($dir) as $node) {
-        if ($node == '.' || $node == '..' || $node == '.DS_Store') continue;
-        if (is_dir($dir . '/' . $node)) {
-            $contents[$node] = dirToArray($dir . '/' . $node);
-        } else {
-            $contents[] = $node;
-        }
-    }
-    return $contents;
-}
+getFileList($startpath);
 
-$r = dirToArray($startpath);
-print_r(json_encode($r));
+  function getFileList($dir)
+  {
+    // array to hold return value
+    $retval = array();
 
-/*
-$paths = array('../gallery');
-    sort($paths);
-    $array = array();
-    foreach ($paths as $path) {
-      $path = trim($path, '/');
-      $list = explode('/', $path);
-      $n = count($list);
+    // add trailing slash if missing
+    if(substr ($dir, -1) != "/") $dir .= "/";
 
-      $arrayRef = &$array; // start from the root
-      for ($i = 0; $i < $n; $i++) {
-        $key = $list[$i];
-        $arrayRef = &$arrayRef[$key]; // index into the next level
+    // open pointer to directory and read list of files
+    $d = @dir ($dir) or die("getFileList: Failed opening directory $dir for reading");
+    while(false !== ($entry = $d->read())) {
+      // skip hidden files
+      if($entry[0] == ".") continue;
+      if(is_dir("$dir$entry")) {
+        $retval[] = array(
+          "path" => "$dir$entry/",
+          "type" => filetype ("$dir$entry"),
+          "size" => 0,
+          "lastmod" => filemtime ("$dir$entry")
+        );
+      } elseif(is_readable ("$dir$entry")) {
+        $retval[] = array(
+          "path" => "$dir$entry",
+          "type" => mime_content_type ("$dir$entry"),
+          "size" => filesize ("$dir$entry"),
+          "lastmod" => filemtime("$dir$entry")
+        );
       }
     }
+    $d->close();
 
-    function buildUL($array, $prefix,$firstrun) {
-        $c = count($array);
-      foreach ($array as $key => $value) {
-            $path_parts = pathinfo($key);
-            if($path_parts['extension'] != '') {
-                $extension = $path_parts['extension'];
-            } else {
-                $extension = 'folder';
-            }
-            if ($prefix == '') { //its a folder
-                echo ' { "data":"'.$key.'"';
-            } else { //its a file
-                echo '{"data" : {"title":"'.$key.'"},"attr":{"href": "'.$prefix.$key.'","id": "1239"},
-                "icon": "images\/'.$extension.'-icon.gif"';
-            }
-            // if the value is another array, recursively build the list$key
-            if (is_array($value)) {
-                echo ',"children" : [ ';
-                buildUL($value, "$prefix$key/",false);
-            }
-            echo "}";
-            $c = $c-1;
-            if($c != 0) {
-                echo ",";
-            }
-      } //end foreach
-     if($firstrun != true)
-      echo "]";
-    }
+    echo json_encode($retval);
 
-    echo '{ "data" : [';
-    buildUL($array, '',true);
-    echo '] }';
-*/
+  }
 ?>
