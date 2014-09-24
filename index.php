@@ -8,8 +8,8 @@
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.ico">
 
-    <!-- Bootstrap Layout -->
-    <link id="pagestyle" rel="stylesheet" href="css/slate.min.css" type="text/css" />
+    <!-- Bootstrap Layout // loading default Stylesheet in 'js/main.js' -->
+    <link id="pagestyle" rel="stylesheet" type="text/css" />
 
     <!-- Own Stylesheets  Layout -->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -21,6 +21,9 @@
 
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- jStorage -->
+    <script src="js/jStorage.js"></script>
 
     <!-- Javascript -->
     <script src="js/main.js"></script>
@@ -141,7 +144,7 @@
 <!-- // Start: Button Click functions -->
 <script>
     $('#home_btn').click(function () {
-        $('#contentLeftColumn').load('start.php');
+        $('#contentLeftColumn').load('start.html');
     });
     $('#LVB_btn').click(function () {
         $('#contentLeftColumn').load('lvb.php');

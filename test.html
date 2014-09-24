@@ -1,0 +1,22 @@
+<p id="testPlaceholder"></p>
+
+<script>
+//var $stationID = [13247,11563];
+var stationID = "13247";
+var requerstURI = "http://hn1.the-agent-factory.de/easygo2/rest/regions/MDV/modules/stationmonitor?con10=1&con01=1&sm10=0&sm01=0&source=HISTORY&cStyle=0&transportFilter=00011111&hafasID="+stationID+"&mode=DEP";
+  // deleted:      &sm01=0&sm10=0&con01=1&con10=1&cStyle=0     after &mode=DEP
+
+
+        $.ajax({
+            type: "GET",
+            crossDomain: true,
+            dataType: "jsonp",
+            url: requerstURI, // Der Pfad des PHP-Skriptes
+            success: function (answer) {
+                console.log(data);
+            }
+        });
+
+
+
+</script>

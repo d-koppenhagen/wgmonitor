@@ -6,7 +6,7 @@
  	var contentRefreshId = setInterval(function(){
  		$("#content").load('content.php');
     },
-    refresh_lvb_plan
+        refresh_lvb_plan
     );
 </script>
 <div class="row" id="content">

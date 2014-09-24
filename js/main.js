@@ -7,15 +7,25 @@ var lat = "51.3145737"; //latitude
 var lon = "12.37689257"; //longitude
 
 var max_stations = 8;
-
 /* ######## End: Global configurations ########### */
 
-$(document).ready(function(){
+var stylesheet_path = {
+            "1":"css/slate.min.css",
+            "2":"css/bootstrap.min.css",
+            "3":"css/darkly.min.css",
+            "4":"css/superhero.min.css",
+            "5":"css/flatly.min.css",
+            "6":"css/sandstone.min.css",
+            "7":"css/yeti.min.css"
+        };
+var stylesheet_value = $.jStorage.get("design", "1"); //get design, default value
+swapStyleSheet(stylesheet_path[stylesheet_value]);
 
+$(document).ready(function(){
         getWeatherData();
         showTime();
 
-        $('#contentLeftColumn').load('start.php');
+        $('#contentLeftColumn').load('start.html');
 
         $('#sidebarRefresh').load('sidebar.php');
         setInterval(function(){

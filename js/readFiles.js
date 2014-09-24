@@ -20,6 +20,7 @@
                 }
 
                 var countfolders = 0;
+                var countrows = 0;
 
                 for(var i = 0 ; i < objLength(jsondata) ; i++){
                     var elementURL = jsondata[i].path;
@@ -28,11 +29,22 @@
                         //open recursive (onclick with jsondata[i].name)
                         countfolders++;
                         var elementParts = elementURL.split("/");
+                        var max_elements_in_row = 6;
+                        var folderElement = '';
 
-                        var folderElement = '<li class="item"><a id="folder_'+countfolders+'">';
+                        if (!(max_elements_in_row % countfolders)){
+                            countrows++;
+                            append_row_string(countrows);
+                        }
+
+                        function append_row_string(rownumber){
+                            $("#subfolderPlaceholder").append('<ul class="nav nav-pills nav-justified" role="tablist" id="gal_folder_row_'+rownumber+'"></ul>');
+                        }
+
+                        folderElement += '<li class="item"><a id="folder_'+countfolders+'">';
                         folderElement += elementParts[elementParts.length - 2]+'</a></li>';
                         //append each folder-container to placeholder
-                        $("#subfolderPlaceholder").append(folderElement);
+                        $("#gal_folder_row_"+countrows).append(folderElement);
 
                         //calling the click function for each button with correct URL
                         getSubfolderData(elementURL);

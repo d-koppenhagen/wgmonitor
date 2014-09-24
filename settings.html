@@ -22,8 +22,8 @@
     <!-- /.col-lg-6 -->
     <div class="col-lg-2">
         <div class="input-group">
-            <input type="text" class="form-control">
-            <span class="input-group-btn" id="sidebar_refresh_time_value" >
+            <input type="text" class="form-control" id="new_refresh_time_val">
+            <span class="input-group-btn">
                 <button id="set_sidebar_refresh_time" class="btn btn-default" type="button">OK</button>
             </span>
         </div>
@@ -35,7 +35,7 @@
 
 
 <h3>Layout ändern:</h3>
-<div class="btn-group">
+<div class="btn-group" id="style_btn_change_grp">
 <button id="slate_layout_btn" type="button" class="btn btn-primary btn-lg">Slate</button>
 <button id="cyborg_layout_btn" type="button" class="btn btn-primary btn-lg">Cyborg</button>
 <button id="darkly_layout_btn" type="button" class="btn btn-primary btn-lg">Darkly</button>
@@ -46,30 +46,38 @@
 </div>
 <script>
     $('#slate_layout_btn').click(function () {
-        swapStyleSheet('css/slate.min.css');
+        $.jStorage.set("design", "1");
     });
     $('#cyborg_layout_btn').click(function () {
-        swapStyleSheet('css/bootstrap.min.css');
+        $.jStorage.set("design", "2");
     });
     $('#darkly_layout_btn').click(function () {
-        swapStyleSheet('css/darkly.min.css');
+        $.jStorage.set("design", "3");
     });
     $('#superhero_layout_btn').click(function () {
-        swapStyleSheet('css/superhero.min.css');
+        $.jStorage.set("design", "4");
     });
     $('#flatly_layout_btn').click(function () {
-        swapStyleSheet('css/flatly.min.css');
+        $.jStorage.set("design", "5");
     });
     $('#sandstone_layout_btn').click(function () {
-        swapStyleSheet('css/sandstone.min.css');
+        $.jStorage.set("design", "6");
     });
     $('#yeti_layout_btn').click(function () {
-        swapStyleSheet('css/yeti.min.css');
+        $.jStorage.set("design", "7");
+    });
+
+    // reload after changing stylesheet
+    $('#style_btn_change_grp').click(function () {
+        location.reload();
     });
 
 
     $('#set_sidebar_refresh_time').click(function () {
-        var newTime = $('#sidebar_refresh_time_value').text();
+        var newTime = $('#new_refresh_time_val').val();
         refresh_time = newTime;
+        alert(newTime);
     });
+
+
 </script>
