@@ -34,7 +34,12 @@
 </div>
 
 <span class="help-block help-block-start"></span>
-<div id="subfolderPlaceholder"></div>
+<ol class="breadcrumb" id="breadcrumb_folder_nav">
+  <li><a class="home_image_folder">Home</a></li>
+</ol>
+<div>
+    <ul class="pager" id="subfolderPlaceholder"></ul>
+</div>
 <span class="help-block"></span>
 <div class="row" id="imageThumbnails"></div>
 </div>
@@ -60,7 +65,14 @@ makeCode();
 <!-- Begin read files -->
  <script>
     $(document).ready(function () {
+        jump_to_root_folder();
+    });
+    $('.home_image_folder').click(function () {
+          jump_to_root_folder();
+          $('#breadcrumb_folder_nav .home_image_folder').nextAll('li').remove();
+    });
+    function jump_to_root_folder(){
       var rootfolder = '../gallery';
       getImageData(rootfolder);
-    });
+    }
  </script>
