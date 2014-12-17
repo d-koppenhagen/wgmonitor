@@ -67,8 +67,11 @@
                     <li class="item" id="feed_btn">
                         <a href="#feeds"> <span class="glyphicon glyphicon-bullhorn"></span> Feeds</a>
                     </li>
-                    <li class="item" class="gb_btn" id="gb_btn_main">
+                    <li class="item gb_btn" id="gb_btn_main">
                         <a href="#gb"> <span class="glyphicon glyphicon-comment"></span> Gästebuch</a>
+                    </li>
+                    <li class="item" id="btn_call">
+                        <a href="#call"> <span class="glyphicon glyphicon-earphone"></span> Telefonieren</a>
                     </li>
                 </ul>
                 <!-- // left navigation part End -->
@@ -91,14 +94,6 @@
             <div class="col-md-8">
                 <!-- the following container will be filled with Ajax after loading...-->
                 <div id="contentLeftColumn"></div>
-                <span class="help-block"></span>
-                <div class="row">
-                    <div class="col-md-8" id="remoteVideos">
-                    </div>
-                    <div class="col-md-4">
-                        <video id="localVideo"></video>
-                    </div>
-                </div>
             </div>
             <!-- // left content part ends here -->
             <!-- // sidebar part starts here -->
@@ -157,6 +152,8 @@
 <!-- Start: Blueimp Gallery Scripts -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
+<script src="js/webrtc.js"></script>
+
 <!-- End: Blueimp Gallery Scripts -->
 
  <!--
@@ -184,6 +181,9 @@
     $('#gb_btn_main').click(function () {
         $( '#contentLeftColumn' ).load( 'gb.html' );
     });
+    $('#btn_call').click(function () {
+        $( '#contentLeftColumn' ).load( 'call.html' );
+    });
 
 $('#main_menu .item').click(function(evt) {
     evt.stopPropagation(); //stops the document click action
@@ -192,7 +192,6 @@ $('#main_menu .item').click(function(evt) {
 });
 </script>
 
-<script src="js/webrtc.js"></script>
 <!-- // End: Button Click functions -->
 </body>
 </html>

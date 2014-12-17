@@ -1,0 +1,33 @@
+<html lang="de">
+<head>
+    <title>Infoscreen</title>
+    <!-- used to start like an app with google chrome on android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- Bootstrap Layout // loading default Stylesheet in 'js/main.js' -->
+    <link id="pagestyle" href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Own Stylesheets  Layout -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- Javascript -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="http://simplewebrtc.com/latest.js"></script>
+</head>
+<body>
+
+<div id="callingContainer"></div>
+
+<script>
+    $( '#callingContainer' ).load( '../call.html' );
+</script>
+
+</body>
+</html>
