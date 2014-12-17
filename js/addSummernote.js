@@ -1,0 +1,99 @@
+$('.summernote').summernote({
+            height: 100,                // set editor height
+            minHeight: 20,              // set minimum height of editor
+            maxHeight: 300,             // set maximum height of editor
+            focus: true, // set focus to editable area after initializing summernote
+            toolbar: [
+                /*
+                [
+                    'style',
+                    ['style']
+                ],
+                */
+                [
+                    'font',
+                    [
+                        'bold',
+                        'italic',
+                        'underline',
+                        /*
+                        'superscript',
+                        'subscript',
+                        'strikethrough',
+                        'clear'
+                        */
+                    ]
+                ],
+                /*
+                [
+                    'fontname',
+                    [
+                        'fontname'
+                    ]
+                ],
+                */
+
+                [
+                    'fontsize',
+                    [
+                        'fontsize'
+                    ]
+                ],
+
+                // Still buggy
+                [
+                    'color',
+                    [
+                        'color'
+                    ]
+                ],
+                /*
+                [
+                    'para',
+                    [
+                        'ul',
+                        'ol',
+                        'paragraph'
+                    ]
+                ],
+                */
+                /*
+                [
+                    'height',
+                    [
+                        'height'
+                    ]
+                ],
+                */
+                /*
+                [
+                    'table',
+                    [
+                        'table'
+                    ]
+                ],
+                */
+                [
+                    'insert',
+                    [
+                        'link',
+                        'picture',
+                        'video',
+                        //'hr'
+                    ]
+                ],
+                [
+                    'view',
+                    [
+                        //'fullscreen',
+                        //'codeview'
+                    ]
+                ],
+                [
+                    'help',
+                    [
+                        'help'
+                    ]
+                ]
+            ]
+        });

@@ -9,7 +9,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- Bootstrap Layout // loading default Stylesheet in 'js/main.js' -->
-    <link id="pagestyle" rel="stylesheet" type="text/css" />
+    <link id="pagestyle" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Own Stylesheets  Layout -->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css" />
     <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css" />
 
+    <!-- Summernote textbox extension -->
+    <link rel="stylesheet" href="css/summernote.css" />
+
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
@@ -26,8 +29,11 @@
     <script src="js/jStorage.js"></script>
 
     <!-- Javascript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://simplewebrtc.com/latest.js"></script>
     <script src="js/main.js"></script>
     <script src="js/wlanconfig.js"></script>
+    <script src="js/summernote.min.js"></script>
 </head>
 <body>
     <!-- // Navigation Start -->
@@ -135,11 +141,51 @@
     </div>
     <!-- // content end -->
 
+
+    <!-- Modal accept call -->
+    <div class="modal fade" id="modalInvite">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Receiving</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="embed-responsive embed-responsive-4by3"
+                                 id="remoteVideos"></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <video id="localVideo"></video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="AcceptButton">Annehmen</button>
+                    <button class="btn btn-success" id="RejectButton">Ablehnen</button>
+                </div>
+<!--
+                <audio loop preload="auto" id="ringingSound" src="sounds/ringing.mp3"></audio>
+-->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
 <!-- End of Bootstrap Image Gallery lightbox -->
 <!-- Start: Blueimp Gallery Scripts -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
 <!-- End: Blueimp Gallery Scripts -->
+
+ <!--
+<script src="js/getLVBinfo.js"></script>
+  -->
 
 <!-- // Start: Button Click functions -->
 <script>
@@ -169,6 +215,8 @@ $('#main_menu .item').click(function(evt) {
     $(this).toggleClass('active');
 });
 </script>
+
+<script src="js/webrtc.js"></script>
 <!-- // End: Button Click functions -->
 </body>
 </html>

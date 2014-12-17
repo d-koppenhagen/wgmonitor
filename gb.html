@@ -3,13 +3,13 @@
     <div class="row">
         <div class="col-xs-12 col-lg-12">
             <div class="input-group">
-                    <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann" name="name" required />
-                    <span class="input-group-btn">
-                        <button class="webform btn btn-primary" type="submit" id="btnSuccess"><span class="glyphicon glyphicon-plus"></span> Eintrag hinzufügen</button>
-                    </span>
-                  </div>
-                <span class="help-block"></span>
-                <textarea type="text" class="webform form-control" id="nachricht" placeholder="Hier könnte deine Nachricht stehen" name="nachricht" required rows="3" />
+                <input type="text" class="webform form-control" id="name" placeholder="Whitey Wei&szlig;mann" name="name" required />
+                <span class="input-group-btn">
+                    <button class="webform btn btn-primary" type="submit" id="btnSuccess"><span class="glyphicon glyphicon-plus"></span> Eintrag hinzufügen</button>
+                </span>
+            </div>
+            <span class="help-block"></span>
+            <textarea class="webform form-control summernote" id="nachricht" placeholder="Hier könnte deine Nachricht stehen" name="nachricht" required rows="3" />
         </div>
     </div>
 </form>
@@ -21,9 +21,10 @@
     </div>
 </div>
 
-
+<script src="js/summernote.min.js"></script>
+<script src="js/addSummernote.js"></script>
 <script>
-    $(document).ready(function () {
+$(document).ready(function () {
         $.ajax({
             type: "GET",
             method: "GET",
@@ -40,51 +41,57 @@
                 });
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.log("error: jqXHR: "+jqXHR+" textStatus: "+textStatus+" errorThrown: "+errorThrown);
+                console.log("error: jqXHR: " + jqXHR + " textStatus: " + textStatus + " errorThrown: " + errorThrown);
             }
         });
+
+        //get messagebox text
+        //var messageText = $('.summernote').code();
+        //alert($('#nachricht').val);
+
+
     });
 </script>
 
 <script>
-        $("#gbform button[type=submit]").click(function () {
-            //$("#quickcontact").submit(function(){
-            // Felder aus dem Formular auslesen
+    $("#gbform button[type=submit]").click(function () {
+        //$("#quickcontact").submit(function(){
+        // Felder aus dem Formular auslesen
 
-            var name = $("#gbform #name");
-            var nachricht = $("#gbform #nachricht");
+        var name = $("#gbform #name");
+        var nachricht = $("#gbform #nachricht");
 
-            // Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
-            var data = 'name=' + name.val() + '&nachricht=' + encodeURIComponent(nachricht.val());
+        // Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
+        var data = 'name=' + name.val() + '&nachricht=' + encodeURIComponent(nachricht.val());
 
-            // Die Formularelemente deaktivieren und dem Benutzer
-            // anzeigen, dass das Formular versendet wird
-            $("#gbform .webform").prop("disabled", true);
-            // Die Anfrage an das PHP-Skript abschicken
+        // Die Formularelemente deaktivieren und dem Benutzer
+        // anzeigen, dass das Formular versendet wird
+        $("#gbform .webform").prop("disabled", true);
+        // Die Anfrage an das PHP-Skript abschicken
 
-            $.ajax({
+        $.ajax({
 
-                url: "common/gbentry.php", // Der Pfad des PHP-Skriptes
-                type: "POST",
-                data: data,
-                dataType: "html",
-                success: function (answer) {
-                    $("#gbform .webform").prop("disabled", false);
-                    var response = answer.replace(/\s/g, "");
-                    if ( response === "success") { // Nachricht wurde erfolgreich verschickt
-                        // Die Eingabefelder leeren
-                        $("#gbform input, #gbform textarea").val("");
-                        $("#gbform #btnSuccess").toggleClass("btn-success", 2000);
-                        $('#contentLeftColumn').load('gb.html', 2000);
+            url: "common/gbentry.php", // Der Pfad des PHP-Skriptes
+            type: "POST",
+            data: data,
+            dataType: "html",
+            success: function (answer) {
+                $("#gbform .webform").prop("disabled", false);
+                var response = answer.replace(/\s/g, "");
+                if (response === "success") { // Nachricht wurde erfolgreich verschickt
+                    // Die Eingabefelder leeren
+                    $("#gbform input, #gbform textarea").val("");
+                    $("#gbform #btnSuccess").toggleClass("btn-success", 2000);
+                    $('#contentLeftColumn').load('gb.html', 2000);
 
-                    } else { // Es wurden nicht alle Felder ausgefüllt
-                        // Entsprechendes Feld rot markieren
-                        $("#"+response).parent().addClass("has-error").addClass("has-feedback");
-                    }
+                } else { // Es wurden nicht alle Felder ausgefüllt
+                    // Entsprechendes Feld rot markieren
+                    $("#" + response).parent().addClass("has-error").addClass("has-feedback");
                 }
-            });
-            // Eigentliches Abschicken des Formulars verhindern,
-            // damit die Seite nicht neu lädt
-            return false;
+            }
         });
+        // Eigentliches Abschicken des Formulars verhindern,
+        // damit die Seite nicht neu lädt
+        return false;
+    });
 </script>

@@ -1,0 +1,9 @@
+alert("test");
+var hfasID = "13247";
+var getString = "http://hn1.the-agent-factory.de/easygo2/rest/regions/MDV/modules/stationmonitor?con10=1&con01=1&sm10=0&sm01=0&source=HISTORY&cStyle=0&transportFilter=00011111&hafasID="+hfasID+"&mode=DEP";
+
+$.getJSON(getString, success());
+
+function success (data){
+    console.log(data);
+};

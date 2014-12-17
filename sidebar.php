@@ -2,7 +2,7 @@
 
 
   <?php
-
+    error_reporting(0);
 	function CityCode($city) {
 			if ($city == "default"){
 				return "DE0006194"; //return Leipzig as default
@@ -106,7 +106,7 @@
 
 
 	/*Parameter für den übernächsten Tag*/
-	 $datum_uebermorgen = date("d.m", time()+172800);
+    $datum_uebermorgen = date("d.m", time()+172800);
 	$wetter=$api->forecast->date[2]->time[0]->w;
 	$wetter_uebermorgen_frueh=substr($wetter,0,1);
 	$wetter_uebermorgen_frueh_txt=$api->forecast->date[2]->time[0]->w_txt;
