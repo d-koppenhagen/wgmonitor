@@ -91,10 +91,20 @@
             <div class="col-md-8">
                 <!-- the following container will be filled with Ajax after loading...-->
                 <div id="contentLeftColumn"></div>
+                <span class="help-block"></span>
+                <div class="row">
+                    <div class="col-md-8" id="remoteVideos">
+                    </div>
+                    <div class="col-md-4">
+                        <video id="localVideo"></video>
+                    </div>
+                </div>
             </div>
             <!-- // left content part ends here -->
             <!-- // sidebar part starts here -->
-            <div class="col-md-4" id="sidebarRefresh"></div>
+            <div class="col-md-4">
+                <div  id="sidebarRefresh"></div>
+            </div>
             <!-- // sidebar part ends here -->
         </div>
 
@@ -151,17 +161,7 @@
                     <h4 class="modal-title">Receiving</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="embed-responsive embed-responsive-4by3"
-                                 id="remoteVideos"></div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <video id="localVideo"></video>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-success" id="AcceptButton">Annehmen</button>
