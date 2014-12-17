@@ -12,9 +12,10 @@ webrtc.on('readyToCall', function () {
     // you can name it anything
     $('#modalInvite').modal();
 
+    webrtc.joinRoom('wg_call');
+
     $("#AcceptButton").click(function () {
         console.log("call accepted");
-        webrtc.joinRoom('wg_call');
     });
     $("#RejectButton, #modalInvite .close").click(function () {
         $('#modalInvite').modal('hide');

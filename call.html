@@ -1,0 +1,53 @@
+<html lang="de">
+<head>
+    <title>Call WG Screen</title>
+    <!-- used to start like an app with google chrome on android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Bootstrap Layout // loading default Stylesheet in 'js/main.js' -->
+    <link id="pagestyle" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Own Stylesheets  Layout -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- Javascript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://simplewebrtc.com/latest.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="embed-responsive embed-responsive-4by3" id="remoteVideos"></div>
+        </div>
+        <div class="col-md-3">
+            <div class="embed-responsive embed-responsive-4by3">
+                <video id="localVideo"></video>
+        </div>
+    </div>
+</div>
+
+<script>
+    var webrtc = new SimpleWebRTC({
+    // the id/element dom element that will hold "our" video
+    localVideoEl: 'localVideo',
+    // the id/element dom element that will hold remote videos
+    remoteVideosEl: 'remoteVideos',
+    // immediately ask for camera access
+    autoRequestMedia: true
+});
+
+webrtc.on('readyToCall', function () {
+    webrtc.joinRoom('wg_call');
+});
+</script>
+<script src="js/webrtc.js"></script>
+<!-- // End: Button Click functions -->
+</body>
+</html>
