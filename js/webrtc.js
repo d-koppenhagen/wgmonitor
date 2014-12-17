@@ -1,4 +1,3 @@
-
 var webrtc = new SimpleWebRTC({
     // the id/element dom element that will hold "our" video
     localVideoEl: 'localVideo',
@@ -9,15 +8,5 @@ var webrtc = new SimpleWebRTC({
 });
 
 webrtc.on('readyToCall', function () {
-    // you can name it anything
-    $('#modalInvite').modal();
-
     webrtc.joinRoom('wg_call');
-
-    $("#AcceptButton").click(function () {
-        console.log("call accepted");
-    });
-    $("#RejectButton, #modalInvite .close").click(function () {
-        $('#modalInvite').modal('hide');
-    });
 });
