@@ -62,7 +62,7 @@ $(document).ready(function () {
         var nachricht = $("#gbform #nachricht");
 
         // Aus den Daten die Anfrage für das PHP-Skript zusammensetzen
-        var data = 'name=' + name.val() + '&nachricht=' + encodeURIComponent(nachricht.val());
+        var data = 'name=' + name.val() + '&nachricht=' + encodeURIComponent($('.summernote').code());
 
         // Die Formularelemente deaktivieren und dem Benutzer
         // anzeigen, dass das Formular versendet wird

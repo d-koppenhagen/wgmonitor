@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css" />
 
     <!-- Summernote textbox extension -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/summernote.css" />
 
     <!-- jQuery -->
@@ -152,7 +153,6 @@
 <!-- Start: Blueimp Gallery Scripts -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
-<script src="js/webrtc.js"></script>
 
 <!-- End: Blueimp Gallery Scripts -->
 
@@ -163,20 +163,20 @@
 <!-- // Start: Button Click functions -->
 <script>
     $('#home_btn').click(function () {
-        $('#contentLeftColumn').load('start.html');
+        $( '#contentLeftColumn').load('start.html');
     });
     $('#LVB_btn').click(function () {
-        $('#contentLeftColumn').load('lvb.php');
+        $( '#contentLeftColumn').load('lvb.php');
     });
     $('#cal_btn').click(function () {
-        $('#contentLeftColumn').load('timetable.php');
+        $( '#contentLeftColumn').load('timetable.php');
     });
     $('#pic_btn').click(function () {
-        $('#contentLeftColumn').load('gal.html');
+        $( '#contentLeftColumn').load('gal.html');
         //$('#contentLeftColumn').load('gallery.php');
     });
     $('#feed_btn').click(function () {
-        $('#contentLeftColumn').load('feeds.html');
+        $( '#contentLeftColumn' ).load('feeds.html');
     });
     $('#gb_btn_main').click(function () {
         $( '#contentLeftColumn' ).load( 'gb.html' );
